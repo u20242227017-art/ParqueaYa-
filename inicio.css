@@ -1,0 +1,109 @@
+/*la estoy cagando a cada rato :v*/
+
+body{
+    background: linear-gradient(to top, rgb(109, 111, 109), rgb(234, 241, 234));
+} 
+/*cabezera*/
+header{
+    background-color: rgb(28, 124, 32);
+    padding-left: 10px;
+    padding-top: 5px;
+    border-radius: 5px;
+    display: flex;
+    gap: 30px;
+}
+
+header img{
+    max-width: 150px;
+        background-color: rgb(28, 124, 32);
+
+}
+/*cuerpo*/
+main{
+    border: 2px solid gray;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 23px;
+}
+
+.Bienvenida{
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 15px;
+}
+
+.Bienvenida img{
+    max-width: 700px;
+    border: solid black;
+}
+
+.botones{
+    display: flex;
+    gap: 15px; 
+}
+
+.btn{
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    background-color: rgb(28, 124, 32);
+    color:white;
+    border: none;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.505);
+}
+
+.btn:hover{
+    background-color: rgb(14, 81, 16);
+    transform: translateY(-3px)
+}
+/*cuerpo interno de informacion*/
+.info > div {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.info img{
+    max-width: 37px;
+}
+
+.info div article{
+    margin-bottom: 15px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 5px;
+    width: 400px;
+    height: 250px;
+}
+
+/*pie de pagina*/
+footer{
+    background-color: rgb(28, 124, 32);
+    gap: 800px;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding-left: 10px;
+    display: flex;
+    animation: desvanecer;
+    animation-fill-mode: view();
+}
+
+footer img{
+    max-width: 150px;
+}
+
+.infoContenedor article:hover{
+    background-color: rgb(233, 240, 233);
+}
+
+.pie{
+    margin-right:10vh;
+}
+@keyframes desvanecer {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+
+}

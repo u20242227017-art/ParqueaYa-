@@ -1,106 +1,208 @@
-/*la estoy cagando a cada rato :v*/
+* {
+    box-sizing: border-box;
+}
 
+html {
+    min-height: 100%;
+    min-width: 100%;
+}
+
+:root{
+    --color-blanco-div:  rgb(231, 230, 230);
+    --color-verde-fondo: rgba(27, 94, 59);
+    --tamaño-letra-pequeña: 18px;
+    --tamaño-letra-grande:45px;
+    --color-letra-fondo-verde: rgb(231, 230, 230);
+    --color-letra-pequeña:rgb(196, 196, 196);
+
+}
 body{
-    background: linear-gradient(to top, rgb(109, 111, 109), rgb(234, 241, 234));
+    min-height: 100vh;
+    min-width: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+    background: rgb(251, 250, 250);
+
 } 
+body p{
+    color: rgb(116, 116, 116);
+}
 /*cabezera*/
 header{
-    background-color: rgb(28, 124, 32);
+
+    background-color: var(--color-verde-fondo);
     padding-left: 10px;
     padding-top: 5px;
-    border-radius: 5px;
     display: flex;
     gap: 30px;
 }
+header p{
+    color: rgb(231, 230, 230);
+    margin-left: 2hv;
+}
 
 header img{
-    max-width: 150px;
-        background-color: rgb(28, 124, 32);
+    height: 60px;
+    width: 60px;
+    background-color: var(--color-verde-fondo);
+    border-radius: 60%;
+    margin-left: 3%;
+    margin-bottom: 1vh;
+    margin-top: 0.5vh;
 
 }
 /*cuerpo*/
 main{
-    border: 2px solid gray;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 23px;
+    min-width: 100vh;
+    flex: 1;
+    font-size: var(--tamaño-letra-pequeña);
+    
 }
 
-.Bienvenida{
+.bienvenida{
+    background-color: white;
+    padding: 3vh;
     display: flex;
-    align-items: center;
-    gap: 100px;
-    margin-bottom: 15px;
+    flex-direction: row;
+    font-size: var(--tamaño-letra-pequeña);
+    gap: 15%;
+    border-bottom: 9px;
+}
+.bienvenida .bienvenidaTexto{
+    margin-top: 3%;
+    margin-left: 5%;
 }
 
-.Bienvenida img{
-    max-width: 700px;
-    border: solid black;
+.bienvenida img{
+    border-radius: 7%;
 }
 
-.botones{
-    display: flex;
-    gap: 15px; 
+.bienvenida h1{
+    font-size: var(--tamaño-letra-grande);
 }
 
-.btn{
-    padding: 12px 24px;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    background-color: rgb(28, 124, 32);
-    color:white;
-    border: none;
-    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.505);
+.botonBienvenida{
+cursor: pointer;
+border: 1px solid green;
+background-color: transparent;
+border-radius: 8px;
+height: 6vh;
+width: 30vh;
+font-size: var(--tamaño-letra-pequeña);
+}
+.botonBienvenida:hover{
+
+    color: white;
+    background-color: green;
+    transition: 0.5s ease;
 }
 
-.btn:hover{
-    background-color: rgb(14, 81, 16);
-    transform: translateY(-3px)
+#comoFunciona{
+    min-width: 100%;
+    text-align: center;
+    padding-top: 3vh;
 }
 /*cuerpo interno de informacion*/
 .info > div {
-    display: flex;
     gap: 20px;
     justify-content: center;
+}
+.info h3, #textoInfo{
+    margin-left: 5%;
+}
+.info h3{
+     margin-top: 10%;
+}
+.info #subInfo{
+    display: flex;
+    flex-direction: column;
+    min-width:  100%;
+    height: 10vh;
+    padding-top: -50px;
+}
+.info article{
+    width: 300px;
 }
 
 .info img{
     max-width: 37px;
 }
-
+.info .infoContenedor{
+    display: flex;
+    flex-direction: row;
+}
 .info div article{
+    margin-top: 5%;
     margin-bottom: 15px;
     border: 2px solid grey;
     border-radius: 10px;
     padding: 5px;
-    width: 400px;
-    height: 250px;
-}
+    height: 150px;
+    width: 30%;
 
+    margin-bottom: 5vh;
+}
+.info div article p{
+    text-align: left;
+    margin-left: 2vh;
+}
+.info div article h3{
+    margin-left: 6vh;
+    margin-top: 0.9vh;
+}
+.info div article img{
+    float: left;
+    margin-left: 5px;
+    margin-right: -60px;
+}
+.textoInfo2{
+    margin: 3%;
+    padding: 3%;
+    border-radius: 1%;
+    background-color: aliceblue;
+
+}
 /*pie de pagina*/
 footer{
-    background-color: rgb(28, 124, 32);
-    gap: 800px;
+    height: 30vh;
+    background-color: var(--color-verde-fondo);
     border-radius: 5px;
-    margin-top: 15px;
+    margin-top: 10px;
     padding-left: 10px;
     display: flex;
-    animation: desvanecer;
-    animation-fill-mode: view();
+    margin-top: cover;
 }
-
+.parqueaYaFooter{
+    padding: 1vh;
+    margin-left: 40px;
+    width: 400px;
+    margin-top: 3vh;
+    color: white;
+}
+.parqueaYaFooter p{
+    color: white;
+}
 footer img{
     max-width: 150px;
 }
-
+.pie{
+    margin-left: 40%;
+    width: 400px;
+    margin-top: 3vh;
+    color: white;
+}
+.pie p, a{
+    color: white;
+    text-decoration: none;
+}
+.infoContenedor{
+    background-color: white;
+}
 .infoContenedor article:hover{
     background-color: rgb(233, 240, 233);
-}
-
-.pie{
-    margin-right:10vh;
 }
 @keyframes desvanecer {
     0% { opacity: 0; }

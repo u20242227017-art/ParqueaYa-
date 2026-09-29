@@ -10,50 +10,50 @@
 
     <!--encabezado-->
     <header>
-        <img src="Imagenes/logo.jpeg" alt="parqueaYa!_logo"> <p>ParqueaYa!<br>Estacionamiento digital</p>
+        <img src="Imagenes/logo.jpeg" alt="parqueaYa!_logo"> <p><strong>ParqueaYa!</strong><br>Estacionamiento digital</p>
     </header>
 
+
     <main>
-        <section class="Bienvenida">
-            <!--contenedor de bienbenida-->
-            <div>
-                <h1>Bienvenido a<br>parqueaYa!</h1>
-                <p>Tu solucion inteligente para reservar espacio de parque de forma<br>rapida y sensilla. Consulta tu reserva o encuentr un espacio disponible en segundos</p>
-            </div>
-            
-            <div>
-                <img src="Imagenes/parqueadero.jpeg" alt="presntacion_de_parqueadero">
-            </div>
-        </section>
-        
-        <div class="botones">
-            <button class="btn btn-principal">Ver espacio disponible</button>
-            
-            <button class="btn btn-secundario">Consultar espacio </button>
+
+        <!--Seccion de Bienvenida-->
+       <section class="bienvenida">
+        <div class="bienvenidaTexto">
+        <h1>Bienvenido a <br> ParqueYa!</h1>
+        <p>tu solucion inteligente para reservar espacios de parqueo de forma rapida y 
+        sencilla consulta tu reserva o encuentra un espacio disponible en segundos</p>
+       <a href=""><button class="botonBienvenida">Ver Espacio Disponible</button></a> 
+    </div>
+        <div>
+            <img src="Imagenes/parqueadero.jpeg" alt="presntacion_de_parqueadero" width="650px">
         </div>
 
+       </section>
+       <div id="comoFunciona">
+        <h1>¿Como Funciona?</h1>
+        <p>Asegura tu estacionamiento</p>
+    </div>
+    
 
-        <!--pendiente
-        <section>
-            <h2><b>¿Cómo Funciona?</b></h2>
-            <p>asegura tu estacionamiento antes de salir de casa</p>
-
-            <div class="contenedor_medio">
-                <div>
-                    <img src="" alt="icono de la lupa">
-                </div>
-                <h3>Busca tu espacio</h3>
-                <p>explora los espacios disponibles en tiempo real y no pierdas el tiempo buscando un puesto</p>
-            
-        </section> -->
-
-        <!--contenedor de informacion-->
+        <!--Seccion de Informacion-->
 
         <section class="info">
-            <h3><b>Informacion del servicio</b></h3>
-            <p>Detalles importantes sobre nuestra ubicacion, horarios de atencion y tarifas vigentes</p>
-            
+        <div class="textoInfo2">
+            <h2 style="float: inline-end; color: green; margin-top: 0.5vh;">01</h2>
+            <img src="Imagenes/lupa.jpeg" alt="icono_mapa" width="30px">
+            <h4>Busca tu espacio</h4>
+            <p>explora los espacios disponibles en tiempo real y elige el que mejor se adapte a tu ubicacion</p>
+          </div>    
+
+        </div>
+        <div>
+           <h3><b>Informacion del Servicio</b></h3>
+            <p id="textoInfo">Detalles importantes sobre nuestra ubicacion, horarios de atencion y tarifas vigentes</p>
+          </div>
+        
             <div class="infoContenedor">
+                
+                
                 <article>
                     <div><img src="Imagenes/reloj-de-pared.jpeg" alt="icono_reloj"></div>
                     <h3>Horarios</h3>
@@ -76,7 +76,8 @@
     </main>
 
      <footer>
-           <div><img src="Imagenes/logo.jpeg" alt="logo">
+
+           <div class="parqueaYaFooter">
                 <h2>ParqueaYa!</h2>
                 <p>la plataforma lider en la gestion optima del espacio en nuetros parqueaderos</p>
             </div>

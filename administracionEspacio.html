@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administracion de espacio</title>
+    <link rel="stylesheet" href="style/adminStyle.css">
+</head>
+<!--encabezado de la pagina-->
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="Imagenes/logo.jpeg" alt="logo">
+            <div class="logo_texto">
+                <h2>ParqueaYa!</h2>
+                <p>Administracion de espacio</p>
+            </div>
+        </div>
+
+
+        <div class="perfil">
+            <img src="Imagenes/usuario.png" alt="imagen_perfil">
+            <p id="nombreUsuario">Raul Alfonzo Gomes</p>
+        </div>
+    </header>
+
+    <!--cuerpo de la pagina-->
+
+    <main class="principal">
+
+        <!--los datos cacorros e innecesario-->
+
+        <section class="datos">
+            <article class="info">
+                <img src="Imagenes/marca-de-verificacion.png" alt="chulito">
+                <span>
+                    <p>00</p>
+                    <p>espacio disponible</p>
+                </span>
+            </article>
+
+            <article class="info">
+                <img src="Imagenes/candado.png" alt="candado">
+                <span>
+                    <p>00</p>
+                    <p>Espacio ocupado</p>
+                </span>
+            </article>
+
+            <article class="info">
+                <img src="Imagenes/mercado-verde.png" alt="subida">
+                <span>
+                    <p>00</p>
+                    <p>Ingresos hoy</p>
+                </span>
+            </article>
+        </section>
+
+        <!--encabezado del cuerpo-->
+        <div class="para_agrupar">
+
+            <div class="parte1">
+                <section class="titMapa">
+                    <div>
+                        <h3>Mapa de el parqueadero</h3>
+                        <p>distribucion visual en tiempo real</p>
+                    </div>
+                    <div>
+                        <button>piso 1</button>
+                        <button>piso 2</button>
+                    </div>
+                </section>
+
+                <!--mapa del admin-->
+
+                <section class="mapa">
+                    <div class="fila">
+                        <!--fila A-->
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>A1</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>A2</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>A3</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>A4</b></span>
+                            <span class="estado">ocupado</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>A5</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+                    </div>
+
+                    <div class="fila">
+                        <!--fila B-->
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>B1</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>B2</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+                        <!--la forma en la que esta acomodado el html y  el css hace que 
+                                                                al cambiar disponible por ocupado cambie el color ajustar con precausion-->
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>B3</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>B4</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>B5</b></span>
+                            <span class="estado">ocupado</span>
+                        </button>
+                    </div>
+
+                    <div class="fila">
+                        <!--fila C-->
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>C1</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>C2</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>C3</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>C4</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>C5</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+                    </div>
+                </section>
+                <!--leyendas del mapa-->
+                <section class="leyenda">
+                    <span class="leyenda_titulo">Leyenda</span>
+
+                    <div class="leyenda_item">
+                        <span class="caja_disponible"></span>
+                        <span>disponible</span>
+                    </div>
+
+                    <div class="leyenda_item">
+                        <span class="caja_ocupado"></span>
+                        <span>ocupado</span>
+                    </div>
+                </section>
+            </div>
+
+            <!--registros de ingresos-->
+
+            <section class="parte2">
+                <h3 class="titulo_tabla">Registo de ingreso</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>placa</th>
+                            <th>puesto</th>
+                            <th>entrada</th>
+                            <th>salida</th>
+                            <th>duracion</th>
+                            <th>estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HJK-987</td>
+                            <td>A1</td>
+                            <td>11:59 AM</td>
+                            <td>--:--</td>
+                            <td>2:30 h</td>
+                            <td><span class="badge activo">activo</span></td>
+                        </tr>
+                        <tr>
+                            <td>MNO-305</td>
+                            <td>B4</td>
+                            <td>7:09 AM</td>
+                            <td>10:30 PM</td>
+                            <td>3:21 h</td>
+                            <td><span class="badge finalizado"> Finalizado</span></td>
+                        </tr>
+                        <tr>
+                            <td>PMH-676</td>
+                            <td>C2</td>
+                            <td>11:15 AM</td>
+                            <td>--:--</td>
+                            <td>2:00 h</td>
+                            <td><span class="badge activo">activo</span></td>
+                        </tr>
+                        <tr>
+                            <td>HWR-119</td>
+                            <td>A5</td>
+                            <td>8:15 AM</td>
+                            <td>10:45 AM</td>
+                            <td>2:30 h</td>
+                            <td><span class="badge finalizado"> Finalizado</span></td>
+                        </tr>
+                        <tr>
+                            <td>VBN-443</td>
+                            <td>C4</td>
+                            <td>7:30 AM</td>
+                            <td>11:00 AM</td>
+                            <td>4:30 h</td>
+                            <td><span class="badge finalizado"> Finalizado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <section class="parte3">
+            <h3 class="titulo_tabla">gestion de pagos</h3>
+            <table>
+                    <thead>
+                        <tr>
+                            <th>placa</th>
+                            <th>puesto</th>
+                            <th>tiempo</th>
+                            <th>total</th>
+                            <th>estado</th>
+                            <th>accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HJK-987</td>
+                            <td>A1</td>
+                            <td>2:30 h</td>
+                            <td>$ 6.750</td>
+                            <td><span class="badge pendiente">pendiente</span></td>
+                            <td>
+                                <button class="btn_cobrar">cobrar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>MNO-305</td>
+                            <td>B4</td>
+                            <td>3:21 h</td>
+                            <td>$ 9.000</td>
+                            <td><span class="badge pagado"> pagado</span></td>
+                            <td><span class="pagado">pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td>PMH-676</td>
+                            <td>C2</td>
+                            <td>2:00 h</td>
+                            <td>$ 4.500</td>
+                            <td><span class="badge pagado">pagado</span></td>
+                            <td><span class="pagado">pagado</span></td>
+                        </tr>
+                        <tr>
+                            <td>HWR-119</td>
+                            <td>A5</td>
+                            <td>2:30 h</td>
+                            <td>$ 6.750</td>
+                            <td><span class="badge pendiente">pendiente</span></td>
+                            <td>
+                                <button class="btn_cobrar">cobrar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>VBN-443</td>
+                            <td>C4</td>
+                            <td>4:30 h</td>
+                            <td>$ 10.700</td>
+                            <td><span class="badge pendiente"> pendiente</span></td>
+                            <td>
+                                <button class="btn_cobrar">cobrar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </section>
+    </main>
+</body>
+
+</html>

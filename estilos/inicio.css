@@ -45,8 +45,8 @@ header p{
 }
 
 header img{
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     background-color: var(--color-verde-fondo);
     border-radius: 60%;
     margin-left: 3%;
@@ -86,11 +86,12 @@ main{
 
 .botonBienvenida{
 cursor: pointer;
-border: 1px solid green;
+border: 3px solid green;
 background-color: transparent;
 border-radius: 8px;
 height: 6vh;
 width: 30vh;
+color: green;
 font-size: var(--tamaño-letra-pequeña);
 }
 .botonBienvenida:hover{
@@ -140,9 +141,8 @@ font-size: var(--tamaño-letra-pequeña);
     border: 2px solid grey;
     border-radius: 10px;
     padding: 5px;
-    height: 150px;
+    height: 20vh;
     width: 30%;
-
     margin-bottom: 5vh;
 }
 .info div article p{
@@ -158,6 +158,7 @@ font-size: var(--tamaño-letra-pequeña);
     margin-left: 5px;
     margin-right: -60px;
 }
+
 .textoInfo2{
     margin: 3%;
     padding: 3%;

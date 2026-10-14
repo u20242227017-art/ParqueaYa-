@@ -1,0 +1,357 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #fefbe2;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+/*contenedor superior*/
+header{
+    display: flex;
+    padding: 10px;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.444);
+    background-color: rgba(27, 94, 59);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #ffffff;
+}
+
+.logo img{
+    max-width: 50px;
+}
+
+.perfil{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+}
+
+.perfil img{
+    max-width: 30px;
+}
+
+
+/*contenedor del cuerpo antes de la parte principal*/
+
+.datos{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 0px 15px;
+    background-color: #ffffff;
+}
+
+.info{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(120, 120, 120, 0.559);
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.444);
+    border-radius: 10px;
+    padding:  10px 7px;
+    height: 90px;
+}
+
+.info img{
+    max-width: 35px;
+}
+
+.info span{
+    padding: 10px;
+    font-size: 20px;
+}
+
+
+/*contenedor del cuerpo*/
+
+.para_agrupar{
+   display: flex;
+   gap: 20px;
+}
+
+.parte1{
+    border: 1px solid rgba(120, 120, 120, 0.559);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.444);
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+
+    /*cabezera del mapa*/
+
+.titMapa{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+}
+
+.titMapa button{
+    padding: 7px 10px;
+    margin: 0;
+    border: 2px solid rgb(2, 80, 2);
+    border-radius: 5px;
+    justify-content: center;
+    transition: backgraund-clor 0.5s ease;
+    font-size: 15px;
+    color: rgb(2, 80, 2);
+    cursor: pointer;
+}
+
+.titMapa button:hover{
+    background-color: rgb(2, 80, 2);
+    color: #ffffff;
+}
+
+   
+/*mapa*/
+
+.mapa{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
+   overflow-x: auto;
+   
+}
+
+.fila{
+  display: flex;
+  gap: 20px;
+width: 100%;
+ justify-content: center; 
+  
+
+}
+
+.puesto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    padding: 8px 4px;
+    margin: 0px;
+    min-width: 70px;
+    height: 80px;
+    border: 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.puesto:hover{
+    transform: translateY(-3px);
+}
+
+.puesto .codigo{
+    font-size: 0.95rem;
+}
+
+.puesto .estado{
+    font-size: 0.95rem;
+    margin-top: 5px;
+}
+
+.puesto.disponible{
+    border-color: rgb(5, 90, 5);
+    background-color: rgba(28, 200, 28, 0.596);
+}
+
+.puesto.ocupado{
+    border-color: rgb(132, 8, 5);
+    background-color: rgba(255, 0, 0, 0.596);
+}
+.puesto.fuera{
+    border-color: rgb(100, 100, 100);
+    background-color: rgba(128, 128, 128, 0.596);
+}
+
+/*pie de mapa*/
+
+.leyenda{
+    border-top: 1px solid gray;
+    display: flex;
+    gap: 30px;
+    padding-top: 10px;
+  
+}
+
+.caja_disponible{
+    height: 50px;
+    padding: 1px 10px;
+    margin: 10px;
+    border: 1px solid rgba(28, 200, 28, 0.596);
+    border-radius: 3px;
+    background-color: rgba(28, 200, 28, 0.596);
+}
+
+.caja_ocupado{
+    height: 50px;
+    padding: 1px 10px;
+    margin-right: 10px;
+    border: 1px solid rgba(255, 0, 0, 0.596);
+    border-radius: 3px;
+    background-color: rgba(255, 0, 0, 0.596);
+}
+
+/*contenedor number dos >:v*/
+
+.parte2 {
+    background-color: #ffffff;
+    border: 1px solid rgba(120, 120, 120, 0.559);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.444);
+    padding: 20px;
+    flex: 1;
+    overflow-x: auto;
+}
+
+.titulo_tabla {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid gray;
+}
+
+.parte2 table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: inherit;
+    text-align: left;
+}
+
+.parte2 th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 12px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.parte2 td {
+    padding: 14px 12px;
+    color: #334155;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.badge.activo {
+    background-color: rgba(28, 200, 28, 0.2);
+    color: rgb(2, 80, 2);
+    border: 1px solid rgb(5, 90, 5);
+}
+
+.badge.finalizado {
+    background-color: #e2e8f0;
+    color: #64748b;
+    border: 1px solid #cbd5e1;
+}
+
+/*contenedor inferior*/
+.parte3 {
+    background-color: #ffffff;
+    border: 1px solid rgba(120, 120, 120, 0.559);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.444);
+    margin-top: 20px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.parte3 table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: inherit;
+    text-align: left;
+}
+
+.parte3 th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 12px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.parte3 td {
+    padding: 14px 12px;
+    color: #334155;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+.badge.pagado {
+    background-color: rgba(28, 200, 28, 0.2);
+    color: rgb(2, 80, 2);
+    border: 1px solid rgb(5, 90, 5);
+}
+
+.badge.pendiente {
+    background-color: rgba(255, 0, 0, 0.596);
+    color: rgb(129, 3, 3);
+    border: 1px solid rgba(123, 3, 3, 0.596);
+}
+
+.btn_cobrar{
+    background-color: #22c55e;
+    color: #ffffff;
+    border: 2px solid #22c55e;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.5s ease, transform 1s ease;
+}
+
+.btn_cobrar:hover{
+    background-color:#ffffff;
+    color: #22c55e;
+}
+
+.pagado{
+    color: #16a34a;
+    font-size: 0.85rem;
+    font-weight: 600;
+}

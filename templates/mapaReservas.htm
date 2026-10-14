@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ParqueaYa!</title>
+    <title>Mapa de Parqueo</title>
     <link rel="stylesheet" href="/ParqueaYa-/estilos/Style.css">
 </head>
 <body>
-<script src="/ParqueaYa-/mapa.js"></script>
+    
+<script src="/ParqueaYa-/scripts/mapa.js" defer></script>
+
     <!-- Encabezado superior -->
     <header class="header-bienvenido">
         <h1>Bienvenido</h1>
@@ -23,12 +25,13 @@
                     <h2>Espacios Disponibles</h2>
                     <p>Selecciona un espacio verde para reservar</p>
                 </div>
-                <div class="selector-piso">
-                    <button class="btn-piso activo">Piso 1</button>
-                    <button class="btn-piso">Piso 2</button>
-                </div>
+             <div class="selector-piso">
+                <button id="piso1" class="btn-piso activo" >Piso 1</button>
+                <button id="piso2" class="btn-piso" >Piso 2</button>
+             </div>
             </div>
-<div id="piso 1">
+            
+<div id="mapa1" class="mapa">
      <!-- FILA A -->
             <div class="grupo-fila">
                 <span class="titulo-fila">FILA A</span>
@@ -109,30 +112,31 @@
                     </div>
                 </div>
             </div>
-            </div>
-             <div id="piso 2">
+     </div>
+
+<div id="mapa2" class="mapa oculto">
             <!-- FILA A -->
             <div class="grupo-fila">
-                <span class="titulo-fila">FILA A</span>
+                <span class="titulo-fila">FILA D</span>
                 <div class="grid-espacios">
-                    <div class="espacio ">
-                        <strong>A1</strong>
+                    <div class="espacio segundo">
+                        <strong>D1</strong>
                         <span></span>
                     </div>
-                    <div class="espacio ">
-                        <strong>A2</strong>
+                    <div class="espacio segundo">
+                        <strong>D2</strong>
                         <span></span>
                     </div>
-                    <div class="espacio ">
-                        <strong>A3</strong>
+                    <div class="espacio segundo">
+                        <strong>D3</strong>
                         <span></span>
                     </div>
-                    <div class="espacio ">
-                        <strong>A4</strong>
+                    <div class="espacio segundo">
+                        <strong>D4</strong>
                         <span></span>
                     </div>
-                    <div class="espacio ">
-                        <strong>A5</strong>
+                    <div class="espacio segundo">
+                        <strong>D5</strong>
                         <span></span>
                     </div>
                 </div>
@@ -140,26 +144,26 @@
 
             <!-- FILA B -->
             <div class="grupo-fila">
-                <span class="titulo-fila">FILA B</span>
+                <span class="titulo-fila">FILA E</span>
                 <div class="grid-espacios">
-                    <div class="espacio ">
-                        <strong>B1</strong>
+                    <div class="espacio segundo">
+                        <strong>E1</strong>
                         <span></span>
                     </div>
-                    <div class="espacio ">
-                        <strong>B2</strong>
+                    <div class="espacio segundo">
+                        <strong>E2</strong>
                         <span></span>
                     </div>
-                    <div class="espacio ">
-                        <strong>B3</strong>
+                    <div class="espacio segundo">
+                        <strong>E3</strong>
                         <span> </span>
                     </div>
-                    <div class="espacio ">
-                        <strong>B4</strong>
+                    <div class="espacio segundo">
+                        <strong>E4</strong>
                         <span></span>
                     </div>
-                    <div class="espacio ">
-                        <strong>B5</strong>
+                    <div class="espacio segundo">
+                        <strong>E5</strong>
                         <span></span>
                     </div>
                 </div>
@@ -167,26 +171,26 @@
 
             <!-- FILA C -->
             <div class="grupo-fila">
-                <span class="titulo-fila">FILA C</span>
+                <span class="titulo-fila">FILA F</span>
                 <div class="grid-espacios">
-                    <div class="espacio ">
-                        <strong>C1</strong>
+                    <div class="espacio segundo">
+                        <strong>F1</strong>
                         <span></span>
                     </div>
-                    <div class="espacio ">
-                        <strong>C2</strong>
+                    <div class="espacio segundo">
+                        <strong>F2</strong>
                         <span></span>
                     </div>
-                    <div class="espacio ">
-                        <strong>C3</strong>
+                    <div class="espacio segundo">
+                        <strong>F3</strong>
                         <span></span>
                     </div>
-                    <div class="espacio ">
-                        <strong>C4</strong>
+                    <div class="espacio segundo">
+                        <strong>F4</strong>
                         <span></span>
                     </div>
-                    <div class="espacio ">
-                        <strong>C5</strong>
+                    <div class="espacio segundo">
+                        <strong>F5</strong>
                         <span></span>
                     </div>
                 </div>
@@ -194,9 +198,7 @@
         </div>  
         </section>
          
-
-        
-            
+   
 
         <!-- Tarjeta de búsqueda por código -->
         <section class="tarjeta-busqueda">

@@ -64,7 +64,9 @@ body {
     margin-top: 2px;
 }
 .btn-regreso{
-    font-size: 1rem;
+    font-size: 1.1rem;
+    width: 30vh;
+    height: 6vh;
     margin: 4vh 0 -2vh 0;
     text-decoration: none;
     border-radius: 8px;
@@ -130,6 +132,7 @@ body {
 
 /* Cajas individuales de cada espacio */
 .espacio {
+    height: 10vh;
     border-radius: 10px;
     padding: 12px 8px;
     text-align: center;
@@ -139,6 +142,7 @@ body {
     justify-content: center;
     gap: 4px;
     border: 1.5px solid transparent;
+    cursor: pointer;
 }
 
 .espacio strong {
@@ -160,7 +164,7 @@ body {
 }
 .espacio:hover{
     background-color: #eaf3d2;
-    transition: 0.5s ease-in-out;
+    transition: 250ms ease-in-out;
 }
 
 
@@ -169,7 +173,7 @@ body {
     background-color: #ffffff;
     border-radius: 16px;
     padding: 24px;
-    width: 340px;
+    width: 440px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     border: 1px solid #f1f5f9;
     display: flex;
@@ -179,6 +183,7 @@ body {
 }
 
 .tarjeta-busqueda h3 {
+    width: 20vh;
     font-size: 16px;
     font-weight: 700;
     color: #0f172a;
@@ -241,5 +246,5 @@ body {
 }
 .segundo:hover{
     background-color: #9ed19e;
-    transition: 0.5s ease-in-out;
+    transition: 250ms ease-in-out;
 }

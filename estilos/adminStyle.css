@@ -7,7 +7,7 @@
 body{
     padding: 0;
     margin: 0 ;
-    background-color: #f1f1f1;
+    background-color: #ecebeb;
     font-family: 'Manrope', sans-serif;
 }
 
@@ -61,6 +61,7 @@ header{
     display: flex;
     flex: 1;
     align-items: center;
+    gap: 10px;
     justify-content: center;
     border: 2px solid rgba(27, 27, 27, 0.559);
     border-radius: 10px;
@@ -86,10 +87,8 @@ header{
    gap: 20px;
 }
 
-.parte1{
-    border: 1px solid rgba(120, 120, 120, 0.559);
+.parte1{  
     border-radius: 10px;
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.444);
     background-color: #ffffff;
     align-items: center;
     justify-content: space-between;
@@ -232,9 +231,7 @@ width: 100%;
 
 .parte2 {
     background-color: #ffffff;
-    border: 1px solid rgba(120, 120, 120, 0.559);
     border-radius: 10px;
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.444);
     padding: 20px;
     flex: 1;
     overflow-x: auto;
@@ -298,11 +295,8 @@ width: 100%;
 .parte3 {
     display: flex ;
     flex-direction: column;
-    align-items: center;
     background-color: #ffffff;
-    border: 1px solid rgba(120, 120, 120, 0.559);
     border-radius: 10px;
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.444);
     margin-top: 20px;
     padding: 20px;
     overflow-x: auto;

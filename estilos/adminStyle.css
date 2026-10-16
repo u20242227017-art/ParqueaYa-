@@ -63,7 +63,7 @@ header{
     align-items: center;
     gap: 10px;
     justify-content: center;
-    border: 2px solid rgba(27, 27, 27, 0.559);
+   border-bottom: 2px solid black;
     border-radius: 10px;
     padding:  10px 7px;
     height: 90px;
@@ -145,10 +145,11 @@ header{
 }
 
 .fila{
-  display: flex;
-  gap: 20px;
-width: 100%;
- justify-content: center; 
+    margin-top: 20px;
+    display: flex;
+     gap: 20px;
+    width: 100%;
+    justify-content: center; 
 }
 
 .puesto{
@@ -205,7 +206,8 @@ width: 100%;
     border-top: 1px solid gray;
     display: flex;
     gap: 30px;
-    padding-top: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
   
 }
 
@@ -230,6 +232,7 @@ width: 100%;
 /*contenedor number dos >:v*/
 
 .parte2 {
+    align-items: center;
     background-color: #ffffff;
     border-radius: 10px;
     padding: 20px;
@@ -249,12 +252,13 @@ width: 100%;
     width: 100%;
     border-collapse: collapse;
     font-family: inherit;
-    text-align: left;
+    text-align: center;
 }
 
 .parte2 th {
-    background-color: #f8fafc;
-    color: #475569;
+    text-transform: uppercase;
+    background-color: #edf5fd;
+    color: #394352;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -311,7 +315,7 @@ width: 100%;
 
 .parte3 th {
     text-transform: uppercase;
-    background-color: #f8fafc;
+    background-color: #edf5fd;
     color: #475569;
     font-size: 0.85rem;
     font-weight: 700;

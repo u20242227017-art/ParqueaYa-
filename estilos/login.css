@@ -14,7 +14,7 @@ body{
     margin-left: 34%;
     border-radius: 5%;
     font-size: 1.5rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 20px;
+    box-shadow: 0px 3px 20px;
 }
 
 .parte-superior{
@@ -61,4 +61,20 @@ body{
 .btns input::placeholder{
     font-size: 1.1rem;
     padding: 5px;
+}
+
+.btns .inicio-sesion{
+    background-color: rgb(5, 73, 5);
+    color: white;
+    transition: 250ms ease-in-out;
+     cursor: pointer;
+     text-transform: bold;
+     display: static;
+}
+
+.btns .inicio-sesion:hover{
+    background-color: rgb(176, 201, 176);
+    color: black;
+    transition: 250ms ease-in-out;
+    border-color: solid black 2px; 
 }

@@ -10,9 +10,10 @@
 <!--encabezado de la pagina-->
 
 <body>
+    <script src="/ParqueaYa-/scripts/mapaAdmin.js" defer></script>
     <header>
         <div class="logo">
-            <img src="Imagenes/logo.jpeg" alt="logo">
+            <img src="/ParqueaYa-/Imagenes/logo.jpeg" alt="logo">
             <div class="logo_texto">
                 <h2>ParqueaYa!</h2>
                 <p>Administracion de espacio</p>
@@ -21,7 +22,7 @@
 
 
         <div class="perfil">
-            <img src="Imagenes/usuario.png" alt="imagen_perfil">
+            <img src="/ParqueaYa-/Imagenes/usuario.png" alt="imagen_perfil">
             <p id="nombreUsuario">Raul Alfonzo Gomez</p>
         </div>
     </header>
@@ -34,7 +35,7 @@
 
         <section class="datos">
             <article class="info">
-                <img src="Imagenes/marca-de-verificacion.png" alt="chulito">
+                <img src="/ParqueaYa-/Imagenes/marca-de-verificacion.png" alt="chulito">
                 <span>
                     <p>00</p>
                     <p>espacio disponible</p>
@@ -42,7 +43,7 @@
             </article>
 
             <article class="info">
-                <img src="Imagenes/candado.png" alt="candado">
+                <img src="/ParqueaYa-/Imagenes/candado.png" alt="candado">
                 <span>
                     <p>00</p>
                     <p>Espacio ocupado</p>
@@ -50,7 +51,7 @@
             </article>
 
             <article class="info">
-                <img src="Imagenes/mercado-verde.png" alt="subida">
+                <img src="/ParqueaYa-/Imagenes/mercado-verde.png" alt="subida">
                 <span>
                     <p>00</p>
                     <p>Ingresos hoy</p>
@@ -68,14 +69,15 @@
                         <p>distribucion visual en tiempo real</p>
                     </div>
                     <div>
-                        <button>piso 1</button>
-                        <button>piso 2</button>
+                        <button id="botonPiso1">piso 1</button>
+                        <button id="botonPiso2">piso 2</button>
                     </div>
                 </section>
 
                 <!--mapa del admin-->
 
                 <section class="mapa">
+            <div id="mapa1">
                     <div class="fila">
                         <!--fila A-->
                         <button class="puesto disponible">
@@ -88,7 +90,7 @@
                             <span class="estado">disponible</span>
                         </button>
 
-                        <button class="puesto disponible">
+                        <button class="puesto disponible    ">
                             <span class="codigo"><b>A3</b></span>
                             <span class="estado">disponible</span>
                         </button>
@@ -160,6 +162,93 @@
                             <span class="estado">disponible</span>
                         </button>
                     </div>
+            </div>
+             <div id="mapa2" class="mapa2 ocultar">
+                    <div class="fila">
+                        <!--fila A-->
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>A1</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>A2</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible    ">
+                            <span class="codigo"><b>A3</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>A4</b></span>
+                            <span class="estado">ocupado</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>A5</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+                    </div>
+
+                    <div class="fila">
+                        <!--fila B-->
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>B1</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>B2</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+                        <!--la forma en la que esta acomodado el html y  el css hace que 
+                                                                al cambiar disponible por ocupado cambie el color ajustar con precausion-->
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>B3</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>B4</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>B5</b></span>
+                            <span class="estado">ocupado</span>
+                        </button>
+                    </div>
+
+                    <div class="fila">
+                        <!--fila C-->
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>C1</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>C2</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>C3</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>C4</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+
+                        <button class="puesto disponible">
+                            <span class="codigo"><b>C5</b></span>
+                            <span class="estado">disponible</span>
+                        </button>
+                    </div>
+            </div>
                 </section>
                 <!--leyendas del mapa-->
                 <section class="leyenda">

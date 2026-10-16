@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>loginAdmin</title>
     <link rel="stylesheet" href="/ParqueaYa-/estilos/login.css">
 </head>
 <body>
-<form action="">
+<form id="form-login">
+    <script src="/ParqueaYa-/scripts/login.js" defer></script>
     <div class="contenedor-principal">
         
         <div class="parte-superior">
@@ -18,15 +19,32 @@
         <div class="btns">
             <div class="credenciales">
                 <img src="/ParqueaYa-/Imagenes/usuario.png" alt="" width="30px">
-                <input type="text" placeholder="Usuario">
+                <input 
+                     type="text"
+                        id="usuario"
+                        name="usuario"
+                        placeholder="Usuario"
+                        autocomplete="username"
+                        required>
             </div>
             <div class="credenciales">
                 <img src="/ParqueaYa-/Imagenes/candado.png" alt="" width="30px">
-                <input type="password" placeholder="Contraseña">
+                <input  
+                        type="password"
+                        id="contrasena"
+                        name="contrasena"
+                        placeholder="Contraseña"
+                        autocomplete="current-password"
+                        required>
             </div>
-            <input type="submit" placeholder="Iniciar Sesion" class="">
+            <input 
+                    type="submit"
+                    value="Iniciar sesión"
+                    class="inicio-sesion">
+
+            <p id="mensaje-login" role="status"></p>
         </div>
     </div>
 </form>
 </body>
-</html>s
+</html>

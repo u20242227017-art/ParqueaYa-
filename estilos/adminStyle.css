@@ -5,9 +5,10 @@
 }
 
 body{
-    background-color: #fefbe2;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0;
+    margin: 0 ;
+    background-color: #f1f1f1;
+    font-family: 'Manrope', sans-serif;
 }
 
 
@@ -18,7 +19,6 @@ header{
     margin-bottom: 30px;
     justify-content: space-between;
     align-items: center;
-    border-radius: 10px;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.444);
     background-color: rgba(27, 94, 59);
 }
@@ -38,7 +38,7 @@ header{
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #ffffff;
+    color: #ffffff; 
 }
 
 .perfil img{
@@ -54,7 +54,7 @@ header{
     justify-content: center;
     margin-bottom: 30px;
     padding: 0px 15px;
-    background-color: #ffffff;
+    background-color: #f1f1f1;
 }
 
 .info{
@@ -62,11 +62,11 @@ header{
     flex: 1;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(120, 120, 120, 0.559);
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.444);
+    border: 2px solid rgba(27, 27, 27, 0.559);
     border-radius: 10px;
     padding:  10px 7px;
     height: 90px;
+    background-color: #ffffff   ;
 }
 
 .info img{
@@ -138,14 +138,18 @@ header{
    overflow-x: auto;
    
 }
+.mapa2 .puesto.disponible{
+
+    background-color: #475569;
+
+    
+}
 
 .fila{
   display: flex;
   gap: 20px;
 width: 100%;
  justify-content: center; 
-  
-
 }
 
 .puesto{
@@ -163,7 +167,12 @@ width: 100%;
     cursor: pointer;
     transition: transform 0.1s ease;
 }
-
+.ocultar{
+    display: none;
+}
+.activo{
+    background-color: #22c55e;
+}
 .puesto:hover{
     transform: translateY(-3px);
 }
@@ -287,6 +296,9 @@ width: 100%;
 
 /*contenedor inferior*/
 .parte3 {
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
     background-color: #ffffff;
     border: 1px solid rgba(120, 120, 120, 0.559);
     border-radius: 10px;
@@ -300,10 +312,11 @@ width: 100%;
     width: 100%;
     border-collapse: collapse;
     font-family: inherit;
-    text-align: left;
+    text-align: center;
 }
 
 .parte3 th {
+    text-transform: uppercase;
     background-color: #f8fafc;
     color: #475569;
     font-size: 0.85rem;

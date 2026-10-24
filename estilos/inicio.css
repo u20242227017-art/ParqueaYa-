@@ -84,14 +84,20 @@ main{
 }
 
 .botonBienvenida{
-cursor: pointer;
-border: 3px solid green;
-background-color: transparent;
-border-radius: 8px;
-height: 6vh;
-width: 30vh;
-color: green;
-font-size: var(--tamaño-letra-pequeña);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 3px solid green;
+    background-color: transparent;
+    border-radius: 8px;
+    height: 6vh;
+    width: 30vh;
+    color: green;
+    font-size: var(--tamaño-letra-pequeña);
+    text-align: center;
+    text-decoration: none;
 }
 .botonBienvenida:hover{
 
@@ -203,4 +209,152 @@ footer img{
 }
 .infoContenedor article:hover{
     background-color: rgb(233, 240, 233);
+}
+
+@media (max-width: 900px) {
+    body,
+    main {
+        min-width: 0;
+    }
+
+    .bienvenida {
+        align-items: center;
+        gap: 5%;
+    }
+
+    .bienvenida > div {
+        min-width: 0;
+    }
+
+    .bienvenida img {
+        display: block;
+        width: 100%;
+        max-width: 650px;
+        height: auto;
+    }
+
+    .info .infoContenedor {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .info div article {
+        flex: 1 1 240px;
+        width: auto;
+        min-height: 20vh;
+        height: auto;
+    }
+
+    footer {
+        min-height: 20vh;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 16px;
+    }
+
+    .parqueaYaFooter,
+    .pie {
+        flex: 1 1 260px;
+        width: auto;
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        min-height: 100vh;
+        padding: 0;
+    }
+
+    header {
+        align-items: center;
+        gap: 12px;
+        padding: 8px 12px;
+    }
+
+    header img {
+        flex: 0 0 50px;
+        margin: 0;
+    }
+
+    main {
+        font-size: 16px;
+    }
+
+    .bienvenida {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+        padding: 20px 16px;
+    }
+
+    .bienvenida .bienvenidaTexto {
+        margin: 0;
+    }
+
+    .bienvenida h1 {
+        font-size: clamp(32px, 10vw, var(--tamaño-letra-grande));
+    }
+
+    .botonBienvenida {
+        width: 30vh;
+        max-width: 100%;
+        height: 6vh;
+    }
+
+    #comoFunciona {
+        min-width: 0;
+        padding: 20px 12px;
+    }
+
+    .textoInfo2 {
+        margin: 16px;
+        padding: 16px;
+    }
+
+    .info h3,
+    #textoInfo {
+        margin-left: 16px;
+    }
+
+    .info h3 {
+        margin-top: 24px;
+    }
+
+    .info .infoContenedor {
+        flex-direction: column;
+        padding: 0 16px;
+    }
+
+    .info div article {
+        flex: 1 1 auto;
+        width: 100%;
+        min-height: 0;
+        margin: 12px 0;
+        padding: 12px;
+    }
+
+    .info div article h3 {
+        margin: 4px 0 8px 44px;
+    }
+
+    .info div article p {
+        margin-left: 0;
+    }
+
+    .info div article img {
+        margin: 4px 8px 0 0;
+    }
+
+    footer {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .parqueaYaFooter,
+    .pie {
+        flex-basis: 100%;
+        padding: 0;
+    }
 }

@@ -7,7 +7,7 @@
 body{
     padding: 0;
     margin: 0 ;
-    background-color: #ecebeb;
+    background-color: #dadada;
     font-family: 'Manrope', sans-serif;
 }
 
@@ -54,7 +54,7 @@ header{
     justify-content: center;
     margin-bottom: 30px;
     padding: 0px 15px;
-    background-color: #f1f1f1;
+    background-color: #dadada;
 }
 
 .info{
@@ -137,13 +137,6 @@ header{
    overflow-x: auto;
    
 }
-.mapa2 .puesto.disponible{
-
-    background-color: #475569;
-
-    
-}
-
 .fila{
     margin-top: 20px;
     display: flex;
@@ -365,4 +358,234 @@ header{
     color: #16a34a;
     font-size: 0.85rem;
     font-weight: 600;
+}
+
+.contenedorRegistroVehivulo{
+padding-top: 20px;
+    border-radius: 10px;
+    gap: 15px;
+    background-color: rgba(27, 94, 59);
+    color: white;
+    font-size: 1.2rem;
+    width: 50%;
+    height: 50vh;
+    text-align: center;
+     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        visibility 0.4s ease;
+}
+
+#form-vehiculo input{
+    border-radius: 10px;
+    width: 35%;
+    height: 5vh;
+    margin-left: 32%;
+    text-transform: uppercase;
+    text-align: center;
+
+
+}
+#form-vehiculo button{
+    cursor: pointer;
+    border-radius: 10px;
+    width: 35%;
+    height: 5vh;
+    margin-left: 32%;
+    text-transform: uppercase;
+
+
+}
+
+#form-vehiculo{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+}
+
+.contenedorRegistroVehivulo.oculto {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translate(-50%, -40%);
+}
+#btn-registrar-vehiculo{
+    margin-top: 20px;
+    margin-left: 85%;
+    padding: 6px;
+    background-color: transparent;
+    text-decoration: none;
+    border-radius: 10px;
+    height: 5vh;
+    cursor: pointer;
+    color: green;
+}
+#btn-registrar-vehiculo:hover{
+   color: white;
+    background-color: green;
+    transition: 0.5s ease;
+}
+
+@media (max-width: 1000px) {
+    .para_agrupar {
+        flex-wrap: wrap;
+    }
+
+    .parte1,
+    .parte2 {
+        flex: 1 1 100%;
+        min-width: 0;
+    }
+
+    .parte1 {
+        overflow-x: auto;
+    }
+
+    .fila {
+        justify-content: flex-start;
+    }
+
+    .puesto {
+        flex: 1 1 70px;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .perfil {
+        flex-wrap: wrap;
+    }
+
+    .datos {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .datos .info {
+        flex: 1 1 180px;
+        min-width: 0;
+        height: auto;
+        min-height: 80px;
+    }
+
+    .info span {
+        padding: 4px;
+        font-size: 16px;
+    }
+
+    .titMapa {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .mapa {
+        padding: 8px 0;
+    }
+
+    .fila {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+    }
+
+    .puesto {
+        flex: 1 1 70px;
+        min-width: 0;
+        min-height: 68px;
+        height: auto;
+    }
+
+    .leyenda {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-left: 0;
+    }
+
+    .parte2,
+    .parte3 {
+        padding: 12px;
+    }
+
+    .parte2 table,
+    .parte3 table {
+        min-width: 620px;
+    }
+
+    .parte2 th,
+    .parte2 td,
+    .parte3 th,
+    .parte3 td {
+        padding: 8px;
+    }
+
+    .contenedorRegistroVehivulo {
+        width: calc(100% - 24px);
+        max-width: 520px;
+        height: auto;
+        max-height: 90vh;
+        max-height: 90dvh;
+        overflow-y: auto;
+        padding: 20px 16px;
+    }
+
+    #form-vehiculo {
+        gap: 16px;
+    }
+
+    #form-vehiculo input,
+    #form-vehiculo select,
+    #form-vehiculo button {
+        width: 100%;
+        min-height: 44px;
+        height: auto;
+        margin-left: 0;
+    }
+
+    #btn-registrar-vehiculo {
+        max-width: 100%;
+        min-height: 44px;
+        height: auto;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .datos {
+        padding: 0 8px;
+    }
+
+    .datos .info {
+        flex-basis: 100%;
+        justify-content: flex-start;
+    }
+
+    .logo {
+        gap: 8px;
+    }
+
+    .titMapa button {
+        min-height: 40px;
+    }
+
+    .puesto .estado {
+        font-size: 0.75rem;
+        overflow-wrap: anywhere;
+    }
 }

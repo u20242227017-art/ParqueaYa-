@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administracion de espacio</title>
-    <link rel="stylesheet" href="/ParqueaYa-/estilos/adminStyle.css">
+    <link rel="stylesheet" href="../estilos/adminStyle.css">
 </head>
 <!--encabezado de la pagina-->
 
 <body>
-    <script src="/ParqueaYa-/scripts/mapaAdmin.js" defer></script>
+    <script src="../scripts/api.js" defer></script>
+    <script src="../scripts/mapaAdmin.js" defer></script>
     <header>
         <div class="logo">
-            <img src="/ParqueaYa-/Imagenes/logo.jpeg" alt="logo">
+            <img src="../Imagenes/logo.jpeg" alt="logo">
             <div class="logo_texto">
                 <h2>ParqueaYa!</h2>
                 <p>Administracion de espacio</p>
@@ -22,8 +23,9 @@
 
 
         <div class="perfil">
-            <img src="/ParqueaYa-/Imagenes/usuario.png" alt="imagen_perfil">
-            <p id="nombreUsuario">Raul Alfonzo Gomez</p>
+            <img src="../Imagenes/usuario.png" alt="imagen_perfil">
+            <p id="nombreUsuario"></p>
+            <button id="cerrar-sesion" type="button">Cerrar sesión</button>
         </div>
     </header>
 
@@ -35,7 +37,7 @@
 
         <section class="datos">
             <article class="info">
-                <img src="/ParqueaYa-/Imagenes/marca-de-verificacion.png" alt="chulito">
+                <img src="../Imagenes/marca-de-verificacion.png" alt="disponibles">
                 <span>
                     <p id="espaciosDisponibles"></p>
                     <p>Espacios disponibles</p>
@@ -43,7 +45,7 @@
             </article>
 
             <article class="info">
-                <img src="/ParqueaYa-/Imagenes/candado.png" alt="candado">
+                <img src="../Imagenes/candado.png" alt="ocupados">
                 <span>
                     <p id="espaciosOcupados"></p>
                     <p>Espacios ocupados</p>
@@ -51,7 +53,7 @@
             </article>
 
             <article class="info">
-                <img src="/ParqueaYa-/Imagenes/mercado-verde.png" alt="subida">
+                <img src="../Imagenes/mercado-verde.png" alt="ingresos">
                 <span>
                     <p id="IngresoDiario"></p>
                     <p>Ingresos hoy</p>
@@ -73,6 +75,7 @@
                         <button id="botonPiso2">piso 2</button>
                     </div>
                 </section>
+                <p id="estado-admin" role="status" aria-live="polite">Conectando con el servidor...</p>
 
                 <!--mapa del admin-->
 
@@ -167,27 +170,27 @@
                     <div class="fila">
                         <!--fila A-->
                         <button class="puesto disponible">
-                            <span class="codigo"><b>A1</b></span>
+                            <span class="codigo"><b>D1</b></span>
                             <span class="estado">disponible</span>
                         </button>
 
                         <button class="puesto disponible">
-                            <span class="codigo"><b>A2</b></span>
+                            <span class="codigo"><b>D2</b></span>
                             <span class="estado">disponible</span>
                         </button>
 
                         <button class="puesto disponible    ">
-                            <span class="codigo"><b>A3</b></span>
+                            <span class="codigo"><b>D3</b></span>
                             <span class="estado">disponible</span>
                         </button>
 
                         <button class="puesto disponible">
-                            <span class="codigo"><b>A4</b></span>
+                            <span class="codigo"><b>D4</b></span>
                             <span class="estado">ocupado</span>
                         </button>
 
                         <button class="puesto disponible">
-                            <span class="codigo"><b>A5</b></span>
+                            <span class="codigo"><b>D5</b></span>
                             <span class="estado">disponible</span>
                         </button>
                     </div>
@@ -195,28 +198,28 @@
                     <div class="fila">
                         <!--fila B-->
                         <button class="puesto disponible">
-                            <span class="codigo"><b>B1</b></span>
+                            <span class="codigo"><b>E1</b></span>
                             <span class="estado">disponible</span>
                         </button>
 
                         <button class="puesto disponible">
-                            <span class="codigo"><b>B2</b></span>
+                            <span class="codigo"><b>E2</b></span>
                             <span class="estado">disponible</span>
                         </button>
                         <!--la forma en la que esta acomodado el html y  el css hace que 
                                                                 al cambiar disponible por ocupado cambie el color ajustar con precausion-->
                         <button class="puesto disponible">
-                            <span class="codigo"><b>B3</b></span>
+                            <span class="codigo"><b>E3</b></span>
                             <span class="estado">disponible</span>
                         </button>
 
                         <button class="puesto disponible">
-                            <span class="codigo"><b>B4</b></span>
+                            <span class="codigo"><b>E4</b></span>
                             <span class="estado">disponible</span>
                         </button>
 
                         <button class="puesto disponible">
-                            <span class="codigo"><b>B5</b></span>
+                            <span class="codigo"><b>E5</b></span>
                             <span class="estado">ocupado</span>
                         </button>
                     </div>
@@ -224,27 +227,27 @@
                     <div class="fila">
                         <!--fila C-->
                         <button class="puesto disponible">
-                            <span class="codigo"><b>C1</b></span>
+                            <span class="codigo"><b>F1</b></span>
                             <span class="estado">disponible</span>
                         </button>
 
                         <button class="puesto disponible">
-                            <span class="codigo"><b>C2</b></span>
+                            <span class="codigo"><b>F2</b></span>
                             <span class="estado">disponible</span>
                         </button>
 
                         <button class="puesto disponible">
-                            <span class="codigo"><b>C3</b></span>
+                            <span class="codigo"><b>F3</b></span>
                             <span class="estado">disponible</span>
                         </button>
 
                         <button class="puesto disponible">
-                            <span class="codigo"><b>C4</b></span>
+                            <span class="codigo"><b>F4</b></span>
                             <span class="estado">disponible</span>
                         </button>
 
                         <button class="puesto disponible">
-                            <span class="codigo"><b>C5</b></span>
+                            <span class="codigo"><b>F5</b></span>
                             <span class="estado">disponible</span>
                         </button>
                     </div>
@@ -279,53 +282,47 @@
                             <th>salida</th>
                             <th>duracion</th>
                             <th>estado</th>
+                            <th>accion</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>HJK-987</td>
-                            <td>A1</td>
-                            <td>11:59 AM</td>
-                            <td>--:--</td>
-                            <td>2:30 h</td>
-                            <td><span class="badge activo">activo</span></td>
-                        </tr>
-                        <tr>
-                            <td>MNO-305</td>
-                            <td>B4</td>
-                            <td>7:09 AM</td>
-                            <td>10:30 PM</td>
-                            <td>3:21 h</td>
-                            <td><span class="badge finalizado"> Finalizado</span></td>
-                        </tr>
-                        <tr>
-                            <td>PMH-676</td>
-                            <td>C2</td>
-                            <td>11:15 AM</td>
-                            <td>--:--</td>
-                            <td>2:00 h</td>
-                            <td><span class="badge activo">activo</span></td>
-                        </tr>
-                        <tr>
-                            <td>HWR-119</td>
-                            <td>A5</td>
-                            <td>8:15 AM</td>
-                            <td>10:45 AM</td>
-                            <td>2:30 h</td>
-                            <td><span class="badge finalizado"> Finalizado</span></td>
-                        </tr>
-                        <tr>
-                            <td>VBN-443</td>
-                            <td>C4</td>
-                            <td>7:30 AM</td>
-                            <td>11:00 AM</td>
-                            <td>4:30 h</td>
-                            <td><span class="badge finalizado"> Finalizado</span></td>
-                        </tr>
+                    <tbody id="tabla-registros">
                     </tbody>
                 </table>
+                 <button id="btn-registrar-vehiculo">
+                 Registrar vehículo
+                 </button>
             </section>
+
         </div>
+
+        <!-- registro de vehiculo -->
+<div class="contenedorRegistroVehivulo oculto">
+  <form id="form-vehiculo">
+
+    <label for="placa">Placa del vehículo</label>
+    <input
+        type="text"
+        id="placa"
+        name="placa"
+        placeholder="Ej. ABC123"
+        required
+    >
+
+    <label for="puesto-registro">Puesto disponible</label>
+    <select id="puesto-registro" name="puestoId" required></select>
+
+    <p id="mensaje-registro" role="status" aria-live="polite"></p>
+
+    <button type="submit">
+        Registrar ingreso
+    </button>
+
+    <button type="button" id="cancelar-modal">
+        Cancelar
+    </button>
+
+</form>
+    </div>
 
         <section class="parte3">
             <h3 class="titulo_tabla">gestion de pagos</h3>
@@ -340,53 +337,7 @@
                             <th>accion</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>HJK-987</td>
-                            <td>A1</td>
-                            <td>2:30 h</td>
-                            <td>$ 6.750</td>
-                            <td><span class="badge pendiente">pendiente</span></td>
-                            <td>
-                                <button class="btn_cobrar">cobrar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>MNO-305</td>
-                            <td>B4</td>
-                            <td>3:21 h</td>
-                            <td>$ 9.000</td>
-                            <td><span class="badge pagado"> pagado</span></td>
-                            <td><span class="pagado">pagado</span></td>
-                        </tr>
-                        <tr>
-                            <td>PMH-676</td>
-                            <td>C2</td>
-                            <td>2:00 h</td>
-                            <td>$ 4.500</td>
-                            <td><span class="badge pagado">pagado</span></td>
-                            <td><span class="pagado">pagado</span></td>
-                        </tr>
-                        <tr>
-                            <td>HWR-119</td>
-                            <td>A5</td>
-                            <td>2:30 h</td>
-                            <td>$ 6.750</td>
-                            <td><span class="badge pendiente">pendiente</span></td>
-                            <td>
-                                <button class="btn_cobrar">cobrar</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>VBN-443</td>
-                            <td>C4</td>
-                            <td>4:30 h</td>
-                            <td>$ 10.700</td>
-                            <td><span class="badge pendiente"> pendiente</span></td>
-                            <td>
-                                <button class="btn_cobrar">cobrar</button>
-                            </td>
-                        </tr>
+                    <tbody id="tabla-pagos">
                     </tbody>
                 </table>
         </section>

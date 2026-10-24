@@ -1,21 +1,47 @@
 import { Module } from '@nestjs/common';
-import { createObserveModule } from '@nestjs/observe';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-
-export const { ObserveModule, ObserveInstrument } = createObserveModule();
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
+import { PuestosModule } from './puestos/puestos.module';
+import { RegistrosModule } from './registros/registros.module';
+import { PagosModule } from './pagos/pagos.module';
+import { TarifasModule } from './tarifas/tarifas.module';
+import { CajaModule } from './caja/caja.module';
 
 @Module({
   imports: [
-    // Distributed tracing, auto-correlated logs, request/job metrics, error
-    // telemetry, alarms, and more — out of the box. Sign up at https://observe.nestjs.com
-    ObserveModule.forRoot({
-      appKey: 'YOUR_APP_KEY',
-      appSecret: 'YOUR_APP_SECRET',
-      serviceId: 'backend',
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: ['.env', 'backend/.env'],
     }),
+
+    TypeOrmModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => {
+        const port = Number(config.getOrThrow<string>('DB_PORT'));
+        if (!Number.isInteger(port) || port < 1 || port > 65535) {
+          throw new Error('DB_PORT must be a valid TCP port.');
+        }
+
+        return {
+          type: 'mysql' as const,
+          host: config.getOrThrow<string>('DB_HOST'),
+          port,
+          username: config.getOrThrow<string>('DB_USERNAME'),
+          password: config.get<string>('DB_PASSWORD') ?? '',
+          database: config.getOrThrow<string>('DB_DATABASE'),
+          autoLoadEntities: true,
+          synchronize: false,
+        };
+      },
+    }),
+
+    AuthModule,
+    PuestosModule,
+    RegistrosModule,
+    PagosModule,
+    TarifasModule,
+    CajaModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

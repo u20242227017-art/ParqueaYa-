@@ -1,6 +1,7 @@
 
 const formulario = document.getElementById("form-login");
 const mensaje = document.getElementById("mensaje-login");
+const botonIngreso = formulario.querySelector('[type="submit"]');
 
 formulario.addEventListener("submit", async (evento) => {
     evento.preventDefault();
@@ -9,25 +10,23 @@ formulario.addEventListener("submit", async (evento) => {
     const contrasena = document.getElementById("contrasena").value;
 
     mensaje.textContent = "Conectando con el servidor...";
+    botonIngreso.disabled = true;
 
     try {
-        const respuesta = await fetch("http://localhost:3000/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                usuario: usuario,
-                contrasena: contrasena
-            })
+        const datos = await window.ParqueaYaApi.post("/auth/login", {
+            usuario,
+            password: contrasena,
         });
-
-        const datos = await respuesta.json();
-
-        mensaje.textContent = datos.mensaje;
+        sessionStorage.setItem("access_token", datos.access_token);
+        sessionStorage.setItem("administrador", JSON.stringify(datos.administrador));
+        mensaje.textContent = "";
+        console.log("BIENVENIDO");
+        window.location.assign("administracionEspacio.html");
 
     } catch (error) {
-        console.error("Error de conexión:", error);
-        mensaje.textContent = "No se pudo conectar con el servidor.";
+        mensaje.textContent = error instanceof Error
+            ? error.message
+            : "No se pudo conectar con el servidor.";
+        botonIngreso.disabled = false;
     }
 });

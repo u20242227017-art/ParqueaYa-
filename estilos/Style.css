@@ -162,6 +162,16 @@ body {
     border-color: #7e977e;
     color: #1b5e20;
 }
+.espacio.ocupado {
+    background-color: #fee2e2;
+    border-color: #b91c1c;
+    color: #7f1d1d;
+}
+.espacio.fuera {
+    background-color: #e2e8f0;
+    border-color: #64748b;
+    color: #334155;
+}
 .espacio:hover{
     background-color: #eaf3d2;
     transition: 250ms ease-in-out;
@@ -237,6 +247,102 @@ body {
     margin-top: 6px;
 }
 
+#form-consulta-puesto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#form-consulta-puesto label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #475569;
+}
+
+.btn-consultar:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.modal-consulta {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.55);
+}
+
+.modal-consulta.oculto {
+    display: none;
+}
+
+.contenido-modal-consulta {
+    position: relative;
+    width: min(100%, 440px);
+    padding: 28px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+}
+
+.contenido-modal-consulta h2 {
+    padding-right: 28px;
+    margin-bottom: 18px;
+    color: #0f172a;
+    font-size: 1.25rem;
+}
+
+#detalle-modal-consulta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+#detalle-modal-consulta p {
+    color: #475569;
+    line-height: 1.5;
+}
+
+#detalle-modal-consulta strong {
+    color: #0f172a;
+}
+
+#detalle-modal-consulta[data-estado="ocupado"] {
+    padding: 14px;
+    border-radius: 10px;
+    background-color: #fee2e2;
+    color: #7f1d1d;
+}
+
+#detalle-modal-consulta[data-estado="disponible"] {
+    padding: 14px;
+    border-radius: 10px;
+    background-color: #e8f5e9;
+}
+
+#detalle-modal-consulta[data-estado="error"],
+#detalle-modal-consulta[data-estado="fuera"] {
+    padding: 14px;
+    border-radius: 10px;
+    background-color: #e2e8f0;
+}
+
+.cerrar-modal-consulta {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    border: 0;
+    background: transparent;
+    color: #475569;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
 .oculto{
    display: none;
 }
@@ -247,4 +353,111 @@ body {
 .segundo:hover{
     background-color: #9ed19e;
     transition: 250ms ease-in-out;
+}
+
+@media (max-width: 900px) {
+    body {
+        max-width: 100%;
+        padding: 24px;
+    }
+
+    .header-bienvenido {
+        margin-left: 0;
+    }
+
+    .tarjeta-espacios {
+        margin-top: 2vh;
+    }
+
+    .tarjeta-busqueda {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        gap: 14px;
+        padding: 16px;
+    }
+
+    .header-bienvenido h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .btn-regreso {
+        display: inline-flex;
+        width: auto;
+        max-width: 100%;
+        min-height: 44px;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        margin: 16px 0 0;
+        padding: 10px 12px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .tarjeta-espacios {
+        gap: 16px;
+        padding: 18px 12px;
+    }
+
+    .encabezado-seccion {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .selector-piso {
+        max-width: 100%;
+    }
+
+    .btn-piso {
+        min-height: 40px;
+        padding: 8px 12px;
+    }
+
+    .grupo-fila {
+        margin-bottom: 16px;
+    }
+
+    .grid-espacios {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 6px;
+    }
+
+    .espacio {
+        min-width: 0;
+        min-height: 64px;
+        height: auto;
+        padding: 8px 2px;
+        overflow-wrap: anywhere;
+    }
+
+    .espacio strong {
+        font-size: 12px;
+    }
+
+    .espacio span {
+        font-size: 9px;
+        letter-spacing: 0;
+    }
+
+    .tarjeta-busqueda {
+        margin-top: 0;
+        padding: 18px;
+    }
+
+    .tarjeta-busqueda h3 {
+        width: auto;
+    }
+
+    .btn-consultar {
+        min-height: 44px;
+    }
+
+    .contenido-modal-consulta {
+        padding: 24px 18px;
+    }
 }

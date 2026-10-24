@@ -31,6 +31,36 @@
 $ npm install
 ```
 
+## Configuration
+
+Create `backend/.env` from `.env.example` and set the MySQL connection values and
+a private `JWT_SECRET`. The real `.env` file is ignored by Git. The API connects
+to MySQL using TypeORM and keeps schema synchronization disabled; create the
+tables in the database before starting the server.
+
+The backend also serves the frontend pages and assets from the same origin.
+Start it with `npm run start` from `backend` and open
+`http://localhost:3000/templates/loginAdmin.html` (or `/` for the home page).
+This avoids needing a separate frontend server. To point the frontend at a
+different backend, define `window.PARQUEAYA_API_URL` before loading
+`scripts/api.js` on the page. Do not open the HTML files with `file://`.
+
+The SQL script at `database/seed-floor-2.sql` creates the 15 second-floor
+spaces (D1–F5) as free spots. It is safe to run more than once and preserves
+existing spot states.
+
+## API endpoints
+
+All endpoints are served from the backend origin (port `3000` by default):
+
+- `POST /auth/login` — accepts `{ "usuario": "...", "password": "..." }` and
+  returns a bearer access token.
+- `GET|POST /puestos`, `GET|PATCH|DELETE /puestos/:id`
+- `GET|POST /registros`, `GET|PATCH|DELETE /registros/:id`
+- `GET|POST /pagos`, `GET|PATCH|DELETE /pagos/:id`
+- `GET|POST /tarifas`, `GET|PATCH|DELETE /tarifas/:id`
+- `GET|POST /caja`, `GET|PATCH|DELETE /caja/:id`
+
 ## Compile and run the project
 
 ```bash

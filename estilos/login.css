@@ -2,7 +2,7 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-image: url(/ParqueaYa-/Imagenes/login-bg.png);
+    background-image: url("../Imagenes/login-bg.png");
     font-family: 'Manrope', sans-serif;
 }
 .contenedor-principal{
@@ -11,7 +11,8 @@ body{
     width: 35%;
     height: 75vh;
     margin-top: 7%;
-    margin-left: 34%;
+    margin-left: 32.5%;
+    margin-right: 32.5%;
     border-radius: 5%;
     font-size: 1.5rem;
     box-shadow: 0px 3px 20px;
@@ -77,4 +78,71 @@ body{
     color: black;
     transition: 250ms ease-in-out;
     border-color: solid black 2px; 
+}
+
+@media (max-width: 900px) {
+    .contenedor-principal {
+        width: min(70%, 520px);
+        min-height: 75vh;
+        height: auto;
+        margin: 7vh auto;
+        padding-bottom: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        min-height: 100vh;
+        padding: 16px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .contenedor-principal {
+        width: 100%;
+        max-width: 440px;
+        min-height: 0;
+        height: auto;
+        margin: auto;
+        padding: 20px 12px 28px;
+        border-radius: 20px;
+        font-size: clamp(1.1rem, 5vw, 1.5rem);
+    }
+
+    .parte-superior {
+        padding-top: 0;
+        text-align: center;
+    }
+
+    .parte-superior img {
+        margin-top: 8px;
+    }
+
+    .parte-superior p {
+        margin: 4px 0 20px;
+    }
+
+    .btns {
+        gap: 18px;
+    }
+
+    .credenciales {
+        gap: 8px;
+    }
+
+    .credenciales img {
+        flex: 0 0 30px;
+        width: 30px;
+        height: auto;
+    }
+
+    .btns input {
+        width: 100%;
+        min-width: 0;
+        font-size: 1rem;
+    }
+
+    .btns input::placeholder {
+        font-size: 1rem;
+    }
 }

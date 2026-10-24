@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/ParqueaYa-/estilos/inicio.css">
+    <title>ParqueaYa! - Estacionamiento Digital</title>
+    <link rel="stylesheet" href="estilos/inicio.css">
 </head>
 <body>
-    <script src="/ParqueaYa-/movimientos.js"></script>
     <!--encabezado-->
     <header>
         <img src="Imagenes/logo.jpeg" alt="parqueaYa!_logo"> <p><strong>ParqueaYa!</strong><br>Estacionamiento Digital</p>
@@ -20,9 +19,8 @@
        <section class="bienvenida">
         <div class="bienvenidaTexto">
         <h1>Bienvenido a <br> ParqueYa!</h1>
-        <p>tu solucion inteligente para reservar espacios de parqueo de forma rapida y 
-        sencilla consulta un espacio disponible en segundos</p>
-       <a href="/ParqueaYa-/templates/mapaReservas.htm"><button class="botonBienvenida">Ver Espacio Disponible</button></a> 
+        <p>Tu solución inteligente para consultar espacios de parqueo disponibles de forma rápida y sencilla.</p>
+       <a href="templates/mapaReservas.htm" class="botonBienvenida">Ver Espacios Disponibles</a>
     </div>
         <div>
             <img src="Imagenes/parqueadero.jpeg" alt="presntacion_de_parqueadero" width="650px">
@@ -31,7 +29,7 @@
        </section>
        <div id="comoFunciona"> 
         <h2>¿Como Funciona?</h2>
-        <p>Asegura tu estacionamiento antes de salir</p>
+        <p>Consulta la disponibilidad antes de salir</p>
     </div>
     <!-- Fin Seccion de Bienvenida-->
 
@@ -69,7 +67,7 @@
                <article>
                 <div><img src="Imagenes/signo-de-dolar.jpeg" alt="icono_$"></div>
                 <h3>Tarifa</h3>
-                <p>hora $3.000 cop <br>fracion $1.000 cop <br> dia completo $18.000 cop</p>
+                <p id="tarifaInfo" aria-live="polite">Consultando tarifa...</p>
                </article>
             </div>
         </section>
@@ -90,8 +88,11 @@
                 <h3>Contacto</h3>
                 <p>Email: <a href="soporte@parqueaya.com">soporte@parqueaya.com</a></p>
                 <p>Telefono: <a href="3176745667">317 6745667</a></p>
+                <p><a href="templates/loginAdmin.html">Acceso de administración</a></p>
             </div>
 
      </footer>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/inicio.js"></script>
 </body>
 </html>

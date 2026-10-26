@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
+import { DataSource } from 'typeorm';
 import { CajaService } from './caja.service';
 import { TurnoCaja } from './entities/caja.entity';
 
@@ -11,6 +12,7 @@ describe('CajaService', () => {
       providers: [
         CajaService,
         { provide: getRepositoryToken(TurnoCaja), useValue: {} },
+        { provide: DataSource, useValue: { transaction: jest.fn() } },
       ],
     }).compile();
 

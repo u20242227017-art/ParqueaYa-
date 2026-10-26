@@ -67,7 +67,7 @@
             <div class="parte1">
                 <section class="titMapa">
                     <div>
-                        <h3>Mapa de el parqueadero</h3>
+                        <h3>Mapa del parqueadero</h3>
                         <p>distribucion visual en tiempo real</p>
                     </div>
                     <div>
@@ -272,15 +272,17 @@
             <!--registros de ingresos-->
 
             <section class="parte2">
-                <h3 class="titulo_tabla">Registo de ingreso</h3>
+                <h3 class="titulo_tabla">Registro de ingresos</h3>
                 <table>
                     <thead>
                         <tr>
                             <th>placa</th>
+                            <th>tipo</th>
                             <th>puesto</th>
                             <th>entrada</th>
                             <th>salida</th>
                             <th>duracion</th>
+                            <th>total cobrado</th>
                             <th>estado</th>
                             <th>accion</th>
                         </tr>
@@ -304,9 +306,21 @@
         type="text"
         id="placa"
         name="placa"
-        placeholder="Ej. ABC123"
+        placeholder="Ej. ABC123 o ABC12D"
+        minlength="6"
+        maxlength="6"
+        pattern="[A-Za-z0-9]{6}"
+        title="La placa debe tener exactamente 6 caracteres"
+        autocomplete="off"
         required
     >
+
+    <label for="tipo-vehiculo">Tipo de vehículo</label>
+    <select id="tipo-vehiculo" name="tipoVehiculo" required>
+        <option value="">Selecciona carro o moto</option>
+        <option value="carro">Carro</option>
+        <option value="moto">Moto</option>
+    </select>
 
     <label for="puesto-registro">Puesto disponible</label>
     <select id="puesto-registro" name="puestoId" required></select>
@@ -324,8 +338,41 @@
 </form>
     </div>
 
+<div id="modal-salida" class="modal-salida oculto" aria-hidden="true">
+    <section
+        class="contenido-modal-salida"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="titulo-modal-salida"
+    >
+        <h2 id="titulo-modal-salida">Confirmar salida y pago</h2>
+        <p class="subtitulo-modal-salida">Resumen calculado con la tarifa vigente</p>
+        <dl class="resumen-salida">
+            <div><dt>Placa</dt><dd id="salida-placa">--</dd></div>
+            <div><dt>Puesto</dt><dd id="salida-puesto">--</dd></div>
+            <div><dt>Entrada</dt><dd id="salida-entrada">--</dd></div>
+            <div><dt>Salida</dt><dd id="salida-hora">--</dd></div>
+            <div><dt>Duración</dt><dd id="salida-duracion">--</dd></div>
+            <div><dt>Tarifa</dt><dd id="salida-tarifa">--</dd></div>
+            <div class="total-salida"><dt>Total a pagar</dt><dd id="salida-total">--</dd></div>
+        </dl>
+        <label for="metodo-pago-salida">Método de pago</label>
+        <select id="metodo-pago-salida">
+            <option value="efectivo">Efectivo</option>
+            <option value="tarjeta">Tarjeta</option>
+            <option value="transferencia">Transferencia</option>
+            <option value="otro">Otro</option>
+        </select>
+        <p id="mensaje-salida" role="status" aria-live="polite"></p>
+        <div class="acciones-modal-salida">
+            <button id="cancelar-salida" type="button">Cancelar</button>
+            <button id="confirmar-salida" type="button">Confirmar cobro y salida</button>
+        </div>
+    </section>
+</div>
+
         <section class="parte3">
-            <h3 class="titulo_tabla">gestion de pagos</h3>
+            <h3 class="titulo_tabla">Gestión de pagos</h3>
             <table>
                     <thead>
                         <tr>

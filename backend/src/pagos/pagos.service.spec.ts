@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { getRepositoryToken } from '@nestjs/typeorm';
+import { DataSource } from 'typeorm';
 import { PagosService } from './pagos.service';
 import { Pago } from './entities/pago.entity';
 
@@ -11,6 +12,7 @@ describe('PagosService', () => {
       providers: [
         PagosService,
         { provide: getRepositoryToken(Pago), useValue: {} },
+        { provide: DataSource, useValue: {} },
       ],
     }).compile();
 

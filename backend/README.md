@@ -49,6 +49,13 @@ The SQL script at `database/seed-floor-2.sql` creates the 15 second-floor
 spaces (D1–F5) as free spots. It is safe to run more than once and preserves
 existing spot states.
 
+Before deploying vehicle type validation, apply
+`database/migration-vehicle-type.sql` to add the optional type column for
+existing records; historical plate values are preserved. New registrations
+must specify `carro` with a plate matching
+`ABC123`, or `moto` with a plate matching `ABC12D`; both formats require exactly
+six characters. The selected type is stored with the parking registration.
+
 ## API endpoints
 
 All endpoints are served from the backend origin (port `3000` by default):
@@ -57,9 +64,23 @@ All endpoints are served from the backend origin (port `3000` by default):
   returns a bearer access token.
 - `GET|POST /puestos`, `GET|PATCH|DELETE /puestos/:id`
 - `GET|POST /registros`, `GET|PATCH|DELETE /registros/:id`
+- `GET /registros/:id/cobro` — returns a server-calculated quote for an active
+  parking registration. Closing it with `PATCH /registros/:id` requires
+  `horaSalida`, `metodo`, `administradorId`, and the quoted
+  `montoConfirmado`; the server recalculates and rejects stale totals before
+  atomically recording payment, exit time, and releasing the spot.
 - `GET|POST /pagos`, `GET|PATCH|DELETE /pagos/:id`
 - `GET|POST /tarifas`, `GET|PATCH|DELETE /tarifas/:id`
 - `GET|POST /caja`, `GET|PATCH|DELETE /caja/:id`
+
+## Parking charges and receipts
+
+The active tariff is stored in `tarifa` (`id = 1`), with `precio_hora` in COP
+and `minutos_gracia`. Configure the requested rate as `5000.00` COP/hour and
+zero grace minutes. The backend charges each started minute, calculates from
+the entry and exit timestamps, and rounds the final total to the nearest peso.
+The dashboard requests the quote from the API and only displays a receipt for a
+confirmed payment; printed receipts identify the application as ParqueaYa.
 
 ## Compile and run the project
 

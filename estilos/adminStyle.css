@@ -395,6 +395,13 @@ padding-top: 20px;
 
 
 }
+#form-vehiculo select{
+    border-radius: 10px;
+    width: 35%;
+    height: 5vh;
+    margin-left: 32%;
+    text-align: center;
+}
 #form-vehiculo button{
     cursor: pointer;
     border-radius: 10px;
@@ -410,7 +417,7 @@ padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 30px;
+    gap: 16px;
 }
 
 .contenedorRegistroVehivulo.oculto {
@@ -587,5 +594,972 @@ padding-top: 20px;
     .puesto .estado {
         font-size: 0.75rem;
         overflow-wrap: anywhere;
+    }
+}
+
+.modal-salida {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(15, 31, 22, 0.58);
+}
+
+.modal-salida.oculto {
+    display: none;
+}
+
+.contenido-modal-salida {
+    width: min(100%, 520px);
+    max-height: min(90vh, 760px);
+    overflow-y: auto;
+    padding: 28px;
+    border: 1px solid var(--admin-border, #e1e9e4);
+    border-radius: 18px;
+    background: var(--admin-surface, #fff);
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.contenido-modal-salida h2 {
+    color: var(--admin-primary, #1b5e3b);
+    font-size: 1.3rem;
+}
+
+.subtitulo-modal-salida {
+    margin: 6px 0 18px;
+    color: var(--admin-muted, #718078);
+    font-size: 0.9rem;
+}
+
+.resumen-salida {
+    margin: 0 0 18px;
+}
+
+.resumen-salida > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--admin-border, #e1e9e4);
+}
+
+.resumen-salida dt {
+    color: var(--admin-muted, #718078);
+}
+
+.resumen-salida dd {
+    margin: 0;
+    font-weight: 700;
+    text-align: right;
+}
+
+.resumen-salida .total-salida {
+    margin-top: 4px;
+    color: var(--admin-primary, #1b5e3b);
+    font-size: 1.1rem;
+}
+
+#metodo-pago-salida {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--admin-border, #e1e9e4);
+    border-radius: 10px;
+    background: #fff;
+}
+
+#mensaje-salida {
+    min-height: 20px;
+    margin-top: 10px;
+    color: var(--admin-danger, #b42332);
+    font-size: 0.9rem;
+}
+
+.acciones-modal-salida {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+#cancelar-salida {
+    border-color: var(--admin-border, #e1e9e4);
+}
+
+#confirmar-salida {
+    background: var(--admin-primary, #1b5e3b);
+    color: white;
+}
+
+#confirmar-salida:hover:not(:disabled) {
+    background: var(--admin-primary-dark, #164b30);
+}
+
+@media (max-width: 480px) {
+    .contenido-modal-salida {
+        padding: 20px 16px;
+    }
+
+    .acciones-modal-salida {
+        flex-direction: column-reverse;
+    }
+}
+
+:root {
+    --admin-primary: #1b5e3b;
+    --admin-primary-dark: #164b30;
+    --admin-primary-soft: #e8f3ec;
+    --admin-text: #172b22;
+    --admin-muted: #718078;
+    --admin-border: #e1e9e4;
+    --admin-surface: #ffffff;
+    --admin-background: #f3f6f4;
+    --admin-danger: #b42332;
+    --admin-danger-soft: #fff0f0;
+    --admin-success: #17633a;
+    --admin-success-soft: #eaf6ee;
+    --admin-radius: 16px;
+    --admin-shadow: 0 8px 24px rgba(25, 55, 38, 0.06);
+}
+
+body {
+    min-height: 100vh;
+    padding: 0 0 36px;
+    background: var(--admin-background);
+    color: var(--admin-text);
+    font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: var(--admin-surface);
+    color: var(--admin-text);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    cursor: pointer;
+    transition:
+        background-color 160ms ease,
+        border-color 160ms ease,
+        color 160ms ease,
+        box-shadow 160ms ease,
+        transform 160ms ease;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid rgba(27, 94, 59, 0.28);
+    outline-offset: 2px;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+}
+
+header {
+    min-height: 78px;
+    margin: 0 0 26px;
+    padding: 14px clamp(20px, 4vw, 56px);
+    background: var(--admin-primary);
+    box-shadow: 0 4px 14px rgba(18, 58, 35, 0.15);
+}
+
+.logo {
+    gap: 13px;
+}
+
+.logo img {
+    width: 46px;
+    height: 46px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.logo_texto h2 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.logo_texto p {
+    margin-top: 3px;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 0.78rem;
+}
+
+.perfil {
+    gap: 12px;
+}
+
+.perfil img {
+    width: 34px;
+    height: 34px;
+    padding: 5px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    object-fit: contain;
+}
+
+.perfil p {
+    max-width: 220px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#cerrar-sesion {
+    min-height: 38px;
+    border-color: rgba(255, 255, 255, 0.34);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+#cerrar-sesion::before {
+    content: "\2197";
+    font-size: 1rem;
+}
+
+#cerrar-sesion:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.principal {
+    width: min(1440px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+.datos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 0 0 22px;
+    padding: 0;
+    background: transparent;
+}
+
+.info {
+    min-width: 0;
+    height: auto;
+    min-height: 112px;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 20px 22px;
+    border: 1px solid var(--admin-border);
+    border-bottom: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+    background: var(--admin-surface);
+    box-shadow: var(--admin-shadow);
+}
+
+.info img {
+    width: 46px;
+    height: 46px;
+    max-width: none;
+    padding: 10px;
+    border-radius: 13px;
+    background: var(--admin-primary-soft);
+    object-fit: contain;
+}
+
+.info:nth-child(2) img {
+    background: var(--admin-danger-soft);
+}
+
+.info:nth-child(3) img {
+    background: #eef2ff;
+}
+
+.info span {
+    min-width: 0;
+    padding: 0;
+    font-size: 0.875rem;
+}
+
+.info span p:first-child {
+    margin-bottom: 4px;
+    color: var(--admin-text);
+    font-size: clamp(1.45rem, 2vw, 1.9rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+}
+
+.info span p:last-child {
+    color: var(--admin-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.para_agrupar {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: start;
+    gap: 20px;
+}
+
+.parte1,
+.parte2,
+.parte3 {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius);
+    background: var(--admin-surface);
+    box-shadow: var(--admin-shadow);
+}
+
+.parte1 {
+    align-self: stretch;
+}
+
+.titMapa {
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.titMapa h3,
+.titulo_tabla {
+    color: var(--admin-text);
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.titMapa p {
+    margin-top: 5px;
+    color: var(--admin-muted);
+    font-size: 0.8rem;
+}
+
+.titMapa > div:last-child {
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid var(--admin-border);
+    border-radius: 11px;
+    background: #f3f6f4;
+}
+
+.titMapa button {
+    min-height: 34px;
+    padding: 7px 12px;
+    border-color: transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--admin-muted);
+    font-size: 0.78rem;
+}
+
+.titMapa button:hover:not(:disabled) {
+    background: #e7eee9;
+    color: var(--admin-primary);
+}
+
+.titMapa button.activo {
+    background: var(--admin-primary);
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(27, 94, 59, 0.15);
+}
+
+.titMapa button:focus-visible {
+    z-index: 1;
+}
+
+#estado-admin {
+    min-height: 20px;
+    margin-bottom: 10px;
+    color: var(--admin-muted);
+    font-size: 0.78rem;
+}
+
+.mapa {
+    display: flex;
+    gap: 0;
+    margin: 0;
+    padding: 8px 0 14px;
+    overflow-x: auto;
+}
+
+#mapa1,
+#mapa2 {
+    width: 100%;
+    min-width: 0;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    width: 100%;
+    margin: 0 0 12px;
+    justify-content: initial;
+}
+
+.fila::before {
+    content: "Fila " attr(data-fila);
+    grid-column: 1 / -1;
+    color: #829087;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    line-height: 1;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.puesto {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    min-height: 82px;
+    height: auto;
+    flex: initial;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    padding: 12px 8px;
+    border: 1px solid;
+    border-radius: 12px;
+    color: var(--admin-text);
+    text-align: center;
+}
+
+.puesto:hover:not(:disabled) {
+    box-shadow: 0 6px 14px rgba(27, 94, 59, 0.13);
+}
+
+.puesto .codigo {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.puesto .estado {
+    margin: 0;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.035em;
+    text-transform: capitalize;
+}
+
+.puesto.disponible {
+    border-color: #afd5bb;
+    background: var(--admin-success-soft);
+    color: #175b34;
+}
+
+.puesto.disponible .estado::before {
+    content: "\2713  ";
+}
+
+.puesto.ocupado {
+    border-color: #efb7b9;
+    background: var(--admin-danger-soft);
+    color: #992630;
+}
+
+.puesto.ocupado .estado::before {
+    content: "\25CF  ";
+}
+
+.puesto.fuera {
+    border-color: #d5dce0;
+    background: #f0f2f4;
+    color: #56616a;
+}
+
+.puesto.fuera .estado::before {
+    content: "\2014  ";
+}
+
+.puesto:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.leyenda {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 14px 0 0;
+    border-top: 1px solid var(--admin-border);
+    color: var(--admin-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.leyenda_titulo {
+    color: var(--admin-text);
+    font-weight: 800;
+}
+
+.leyenda_item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.caja_disponible,
+.caja_ocupado {
+    width: 11px;
+    height: 11px;
+    padding: 0;
+    margin: 0;
+    border-radius: 4px;
+}
+
+.caja_disponible {
+    border: 1px solid #afd5bb;
+    background: var(--admin-success-soft);
+}
+
+.caja_ocupado {
+    border: 1px solid #efb7b9;
+    background: var(--admin-danger-soft);
+}
+
+.parte2 {
+    align-self: start;
+    height: fit-content;
+    padding: 22px 18px;
+    overflow-x: auto;
+}
+
+.titulo_tabla {
+    margin: 0 0 16px;
+    padding: 0 0 13px;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.parte2 table,
+.parte3 table {
+    width: 100%;
+    min-width: 660px;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+}
+
+.parte2 th,
+.parte3 th {
+    padding: 11px 10px;
+    border-bottom: 1px solid var(--admin-border);
+    background: #f7f9f8;
+    color: #68766e;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.parte2 th:first-child,
+.parte3 th:first-child {
+    border-radius: 8px 0 0;
+}
+
+.parte2 th:last-child,
+.parte3 th:last-child {
+    border-radius: 0 8px 0 0;
+}
+
+.parte2 td,
+.parte3 td {
+    padding: 13px 10px;
+    border-bottom: 1px solid #edf1ee;
+    color: #405047;
+    font-size: 0.78rem;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.parte2 tbody tr:hover,
+.parte3 tbody tr:hover {
+    background: #f8faf8;
+}
+
+.badge {
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.badge.activo {
+    border-color: #b7dfc1;
+    background: var(--admin-success-soft);
+    color: #17633a;
+}
+
+.badge.finalizado {
+    border-color: #dce3de;
+    background: #f1f4f2;
+    color: #65736b;
+}
+
+.badge.pagado {
+    border-color: #b7dfc1;
+    background: var(--admin-success-soft);
+    color: #17633a;
+}
+
+.badge.pendiente {
+    border-color: #f1c3c5;
+    background: var(--admin-danger-soft);
+    color: #a12a34;
+}
+
+.parte2 td button,
+.parte3 td button {
+    min-height: 32px;
+    padding: 6px 10px;
+    border-color: #c7ddce;
+    background: #f3f8f4;
+    color: var(--admin-primary);
+    font-size: 0.72rem;
+}
+
+.parte2 td button::before {
+    content: "\2197";
+}
+
+.parte3 td button {
+    border-color: var(--admin-primary);
+    background: var(--admin-primary);
+    color: #fff;
+}
+
+.parte3 td button::before {
+    content: "$";
+}
+
+#btn-registrar-vehiculo {
+    min-height: 44px;
+    margin: 16px 0 0;
+    padding: 11px 17px;
+    border-color: var(--admin-primary);
+    background: var(--admin-primary);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(27, 94, 59, 0.17);
+}
+
+#btn-registrar-vehiculo::before {
+    content: "+";
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#btn-registrar-vehiculo:hover:not(:disabled) {
+    border-color: var(--admin-primary-dark);
+    background: var(--admin-primary-dark);
+    box-shadow: 0 6px 14px rgba(27, 94, 59, 0.22);
+}
+
+.parte3 {
+    margin-top: 20px;
+    padding: 22px;
+    overflow-x: auto;
+}
+
+.parte3 .titulo_tabla {
+    text-transform: capitalize;
+}
+
+.contenedorRegistroVehivulo {
+    position: fixed;
+    z-index: 20;
+    inset: 0;
+    display: grid;
+    width: auto;
+    height: auto;
+    align-items: center;
+    justify-items: center;
+    padding: 20px;
+    transform: none;
+    border-radius: 0;
+    background: rgba(15, 35, 24, 0.5);
+    color: var(--admin-text);
+    text-align: left;
+    backdrop-filter: blur(3px);
+}
+
+.contenedorRegistroVehivulo form {
+    display: flex;
+    width: min(100%, 460px);
+    max-height: min(90vh, 720px);
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    padding: 28px;
+    border: 1px solid var(--admin-border);
+    border-radius: 18px;
+    background: var(--admin-surface);
+    box-shadow: 0 20px 60px rgba(13, 35, 23, 0.22);
+}
+
+#form-vehiculo label {
+    margin-top: 5px;
+    color: #435248;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+#form-vehiculo input,
+#form-vehiculo select {
+    width: 100%;
+    min-height: 44px;
+    height: auto;
+    margin: 0;
+    padding: 10px 12px;
+    border: 1px solid #d7e1da;
+    border-radius: 9px;
+    background: #fbfcfb;
+    color: var(--admin-text);
+    text-align: left;
+    text-transform: none;
+}
+
+#form-vehiculo input#placa {
+    text-transform: uppercase;
+}
+
+#mensaje-registro {
+    min-height: 18px;
+    color: var(--admin-danger);
+    font-size: 0.8rem;
+}
+
+#form-vehiculo button {
+    width: 100%;
+    min-height: 42px;
+    height: auto;
+    margin: 0;
+    text-transform: none;
+}
+
+#form-vehiculo button[type="submit"] {
+    border-color: var(--admin-primary);
+    background: var(--admin-primary);
+    color: #fff;
+}
+
+#form-vehiculo button[type="submit"]:hover:not(:disabled) {
+    background: var(--admin-primary-dark);
+}
+
+#cancelar-modal {
+    border-color: var(--admin-border);
+    background: #f7f9f8;
+    color: #56645c;
+}
+
+#cancelar-modal:hover:not(:disabled) {
+    background: #edf1ee;
+}
+
+@media (max-width: 1080px) {
+    .para_agrupar {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .parte1,
+    .parte2 {
+        min-width: 0;
+    }
+
+    .parte2 table {
+        min-width: 760px;
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        min-height: 0;
+        padding: 14px 18px;
+    }
+
+    .principal {
+        width: calc(100% - 28px);
+    }
+
+    .datos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .info {
+        min-height: 92px;
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .info:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .info img {
+        width: 38px;
+        height: 38px;
+        padding: 8px;
+    }
+
+    .info span p:first-child {
+        font-size: 1.4rem;
+    }
+
+    .para_agrupar {
+        gap: 14px;
+    }
+
+    .parte1,
+    .parte2,
+    .parte3 {
+        padding: 16px;
+    }
+
+    .titMapa {
+        flex-wrap: wrap;
+    }
+
+    .mapa {
+        overflow-x: auto;
+    }
+
+    #mapa1,
+    #mapa2 {
+        min-width: 420px;
+    }
+
+    .fila {
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .puesto {
+        min-height: 70px;
+        padding: 9px 5px;
+    }
+
+    .parte2 table,
+    .parte3 table {
+        min-width: 760px;
+    }
+
+    .contenedorRegistroVehivulo {
+        padding: 14px;
+    }
+
+    .contenedorRegistroVehivulo form {
+        max-height: 92vh;
+        padding: 22px 18px;
+    }
+}
+
+@media (max-width: 420px) {
+    header {
+        align-items: flex-start;
+    }
+
+    .logo {
+        gap: 9px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo_texto h2 {
+        font-size: 1rem;
+    }
+
+    .logo_texto p {
+        font-size: 0.7rem;
+    }
+
+    .perfil {
+        gap: 7px;
+    }
+
+    .perfil p {
+        max-width: 115px;
+        font-size: 0.76rem;
+    }
+
+    #cerrar-sesion {
+        min-height: 34px;
+        padding: 7px 9px;
+        font-size: 0.72rem;
+    }
+
+    .datos {
+        grid-template-columns: 1fr;
+    }
+
+    .info,
+    .info:last-child {
+        grid-column: auto;
+        min-height: 80px;
+    }
+
+    .titMapa {
+        align-items: flex-start;
+    }
+
+    .titMapa > div:last-child {
+        width: 100%;
+    }
+
+    .titMapa button {
+        flex: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }

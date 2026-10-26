@@ -8,6 +8,11 @@ import {
 
 import { Puesto } from '../../puestos/entities/puesto.entity';
 
+export enum TipoVehiculo {
+  CARRO = 'carro',
+  MOTO = 'moto',
+}
+
 @Entity('registro_estacionamiento')
 export class Registro {
   @PrimaryGeneratedColumn({
@@ -18,6 +23,14 @@ export class Registro {
 
   @Column({ length: 10 })
   placa: string;
+
+  @Column({
+    name: 'tipo_vehiculo',
+    type: 'enum',
+    enum: TipoVehiculo,
+    nullable: true,
+  })
+  tipoVehiculo: TipoVehiculo | null;
 
   @Column({
     name: 'puesto_id',

@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { RegistrosService } from './registros.service';
 import { CreateRegistroDto } from './dto/create-registro.dto';
 import { UpdateRegistroDto } from './dto/update-registro.dto';
@@ -20,6 +28,11 @@ export class RegistrosController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.registrosService.findOne(id);
+  }
+
+  @Get(':id/cobro')
+  quote(@Param('id') id: string) {
+    return this.registrosService.quote(id);
   }
 
   @Patch(':id')

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Registra tu interés en probar ParqueaYa gratis.">
+    <title>Prueba gratis | ParqueaYa!</title>
+    <link rel="stylesheet" href="../estilos/pruebaGratis.css">
+</head>
+<body>
+    <main class="signup-page">
+        <section class="signup-card" aria-labelledby="signup-title">
+            <a class="brand" href="/" aria-label="ParqueaYa, ir al inicio">
+                <img src="../Imagenes/parqueaYalogin.png" alt="">
+                <span>ParqueaYa!</span>
+            </a>
+            <p class="eyebrow">Prueba gratis</p>
+            <div class="espacio">
+                <h1 id="signup-title">ParqueaYa desde tu parqueadero</h1>
+            </div>
+            
+
+            <form class="signup-form">
+                <div class="field">
+                    <label for="nombre">Nombre completo</label>
+                    <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required>
+                </div>
+                <div class="field">
+                    <label for="correo">Correo electrónico</label>
+                    <input id="correo" name="correo" type="email" autocomplete="email" placeholder="nombre@empresa.com" required>
+                </div>
+                <div class="field-row">
+                    <div class="field">
+                        <label for="edad">Edad</label>
+                        <input id="edad" name="edad" type="number" min="18" max="120" placeholder="Tu edad" required>
+                    </div>
+                    <div class="field">
+                        <label for="telefono">Teléfono</label>
+                        <input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="Tu número" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="empresa">Empresa o parqueadero</label>
+                    <input id="empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nombre del negocio" required>
+                </div>
+                <div class="field-row">
+                    <div class="field">
+                        <label for="ciudad">Ciudad</label>
+                        <input id="ciudad" name="ciudad" autocomplete="address-level2" placeholder="Tu ciudad" required>
+                    </div>
+                    <div class="field">
+                        <label for="espacios">Cantidad de espacios</label>
+                        <select id="espacios" name="espacios" required>
+                            <option value="" selected disabled>Selecciona una opción</option>
+                            <option value="1-20">1 a 20</option>
+                            <option value="21-50">21 a 50</option>
+                            <option value="51-100">51 a 100</option>
+                            <option value="100+">Más de 100</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="submit-button">Solicitar prueba gratis</button>
+            </form>
+
+            <a class="back-link" href="conocenos.html">Volver a Conócenos</a>
+        </section>
+    </main>
+</body>
+</html>

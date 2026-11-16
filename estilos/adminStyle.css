@@ -1563,3 +1563,56 @@ header {
         transition-duration: 0.01ms !important;
     }
 }
+
+.parte2,
+.parte3 {
+    display: flex;
+    height: min(480px, 70vh);
+    max-height: 480px;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.parte2 .tabla-contenedor,
+.parte3 .tabla-contenedor {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow-x: scroll;
+    overflow-y: auto;
+    scrollbar-color: #9bad9f #edf2ee;
+    scrollbar-width: thin;
+}
+
+.parte2 .tabla-contenedor table,
+.parte3 .tabla-contenedor table {
+    width: max-content;
+    min-width: 100%;
+    margin-bottom: 0;
+}
+
+.parte2 .tabla-contenedor::-webkit-scrollbar,
+.parte3 .tabla-contenedor::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.parte2 .tabla-contenedor::-webkit-scrollbar-track,
+.parte3 .tabla-contenedor::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background: #edf2ee;
+}
+
+.parte2 .tabla-contenedor::-webkit-scrollbar-thumb,
+.parte3 .tabla-contenedor::-webkit-scrollbar-thumb {
+    border: 2px solid #edf2ee;
+    border-radius: 8px;
+    background: #9bad9f;
+}
+
+#btn-registrar-vehiculo {
+    flex: 0 0 auto;
+    align-self: flex-start;
+}

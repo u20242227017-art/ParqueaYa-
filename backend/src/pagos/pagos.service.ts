@@ -26,7 +26,7 @@ export class PagosService {
     return this.dataSource.transaction(async (manager) => {
       const registro = await manager.findOne(Registro, {
         where: { id: createPagoDto.registroId },
-        lock: { mode: 'pessimistic_read' },
+        lock: { mode: 'pessimistic_write' },
       });
       if (!registro) {
         throw new NotFoundException(
@@ -105,7 +105,7 @@ export class PagosService {
       }
       const registro = await manager.findOne(Registro, {
         where: { id: pago.registroId },
-        lock: { mode: 'pessimistic_read' },
+        lock: { mode: 'pessimistic_write' },
       });
       if (!registro) {
         throw new NotFoundException(`Registro ${pago.registroId} no encontrado`);

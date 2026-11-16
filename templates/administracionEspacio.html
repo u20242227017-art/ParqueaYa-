@@ -273,23 +273,25 @@
 
             <section class="parte2">
                 <h3 class="titulo_tabla">Registro de ingresos</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>placa</th>
-                            <th>tipo</th>
-                            <th>puesto</th>
-                            <th>entrada</th>
-                            <th>salida</th>
-                            <th>duracion</th>
-                            <th>total cobrado</th>
-                            <th>estado</th>
-                            <th>accion</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabla-registros">
-                    </tbody>
-                </table>
+                <div class="tabla-contenedor">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>placa</th>
+                                <th>tipo</th>
+                                <th>puesto</th>
+                                <th>entrada</th>
+                                <th>salida</th>
+                                <th>duracion</th>
+                                <th>total cobrado</th>
+                                <th>estado</th>
+                                <th>accion</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-registros">
+                        </tbody>
+                    </table>
+                </div>
                  <button id="btn-registrar-vehiculo">
                  Registrar vehículo
                  </button>
@@ -373,7 +375,8 @@
 
         <section class="parte3">
             <h3 class="titulo_tabla">Gestión de pagos</h3>
-            <table>
+            <div class="tabla-contenedor">
+                <table>
                     <thead>
                         <tr>
                             <th>placa</th>
@@ -387,6 +390,7 @@
                     <tbody id="tabla-pagos">
                     </tbody>
                 </table>
+            </div>
         </section>
     </main>
 </body>

@@ -46,6 +46,26 @@ async function bootstrap() {
         );
     },
   );
+  app.getHttpAdapter().get(
+    '/conocenos',
+    (_request, response) => {
+      app.getHttpAdapter().setHeader(
+        response,
+        'Content-Type',
+        'text/html; charset=utf-8',
+      );
+      app
+        .getHttpAdapter()
+        .reply(
+          response,
+          readFileSync(
+            resolve(frontendRoot, 'templates', 'conocenos.html'),
+            'utf8',
+          ),
+          200,
+        );
+    },
+  );
 
   const port = Number(process.env.PORT ?? 3000);
   if (!Number.isInteger(port) || port < 1 || port > 65535) {

@@ -159,7 +159,7 @@ export class RegistrosService {
 
       const tarifa = await manager.findOne(Tarifa, {
         where: { id: 1 },
-        lock: { mode: 'pessimistic_read' },
+        lock: { mode: 'pessimistic_write' },
       });
       if (!tarifa) {
         throw new NotFoundException('No hay una tarifa configurada');
